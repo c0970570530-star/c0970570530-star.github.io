@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠悠的數位生活基地</title>
     <style>
-        /* 採用 Nord 極簡色彩美學：純白底色、冷灰字體、深黑強調 */
+        /* Nord 極簡色彩美學：加深灰色，提升清晰度 */
         :root {
             --bg-color: #ffffff;
-            --text-main: #2e3440;
-            --text-muted: #4c5668;
-            --text-light: #718096;
-            --border-color: #eceff4;
+            --text-main: #2d3748;
+            --text-muted: #4a5568;  /* 沉穩中灰 */
+            --text-light: #718096;  /* 質感深灰（日期專用） */
+            --border-color: #edf2f7;
         }
 
         body {
@@ -25,65 +25,92 @@
             letter-spacing: 0.5px;
         }
 
-        /* 標頭：極度克制，不帶一絲贅肉 */
+        /* 標頭區 */
         header {
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
         h1 {
             font-size: 1.6rem;
-            font-weight: 500;
-            margin: 0 0 8px 0;
-            color: #000;
+            font-weight: 600;
+            margin: 0 0 12px 0;
+            color: #1a202c;
         }
         .bio {
             font-size: 0.9rem;
             color: var(--text-muted);
+            margin: 0;
         }
 
-        /* 分類區塊 */
+        /* 簡約導覽列 */
+        nav {
+            margin-bottom: 50px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-right: 20px;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
+        }
+        nav a:hover {
+            color: #000000;
+        }
+
+        /* 區塊設定 */
         section {
             margin-bottom: 50px;
+            scroll-margin-top: 30px; /* 讓點擊導覽跳轉時留有空間 */
         }
         h2 {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--text-light);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 600;
         }
 
-        /* 條列式生活活動：取消框線卡片，改用留白與點綴線，比教授的條列更具現代感 */
+        /* 條列式生活活動：優化對齊邏輯 */
         .log-item {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: flex-start;
             padding: 16px 0;
             border-bottom: 1px dashed var(--border-color);
         }
         .log-content {
             flex: 1;
-            padding-right: 20px;
+            padding-right: 30px;
         }
         .log-title {
             font-size: 0.95rem;
             font-weight: 500;
             color: var(--text-main);
-            text-decoration: none;
+            margin: 0;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+        /* 滑鼠懸停在標題上的視覺回饋 */
+        .log-title:hover {
+            color: #3182ce; 
         }
         .log-desc {
             font-size: 0.85rem;
             color: var(--text-muted);
-            margin: 4px 0 0 0;
+            margin: 6px 0 0 0;
         }
         .log-date {
             font-size: 0.85rem;
             color: var(--text-light);
             white-space: nowrap;
             font-family: monospace;
+            padding-top: 2px;
         }
 
-        /* 底部頁尾 */
+        /* 頁尾 */
         footer {
             margin-top: 100px;
             font-size: 0.8rem;
@@ -99,30 +126,33 @@
         <p class="bio">看似尋常的日常，都是值得留在網路上細細品味的活動紀錄。</p>
     </header>
 
-    <!-- 生活活動區塊 -->
-    <section>
+    <nav>
+        <a href="#log">LOG / 生活活動</a>
+        <a href="#notes">NOTES / 知識庫</a>
+    </nav>
+
+    <section id="log">
         <h2>Log / 生活活動</h2>
         
         <div class="log-item">
-            <div class="log-date">2026.07</div>
-        </div>
-
-        <div class="log-item">
             <div class="log-content">
-                <div class="log-title">日常隨筆─關於那些耳機裡重複播放的旋律</div>
+                <h3 class="log-title">日常隨筆─關於那些耳機裡重複播放的旋律</h3>
                 <p class="log-desc">記錄一些放鬆時聽的音樂，以及生活裡偶然閃過的零碎想法。</p>
             </div>
             <div class="log-date">2026.07</div>
         </div>
+
+        <div class="log-item">
+            <div class="log-date">2026.07</div>
+        </div>
     </section>
 
-    <!-- 學習筆記區塊 -->
-    <section>
+    <section id="notes">
         <h2>Notes / 知識庫</h2>
 
         <div class="log-item">
             <div class="log-content">
-                <div class="log-title">Python基礎與邏輯優化筆記</div>
+                <h3 class="log-title">Python 基礎與邏輯優化筆記</h3>
                 <p class="log-desc">學習如何優化程式邏輯，為未來的專案或學校報告打下乾淨的程式底子。</p>
             </div>
             <div class="log-date">Running</div>
