@@ -211,6 +211,18 @@
                 </div>
 
                 <a id="tab-star" onclick="switchTab('star')">💎 追星紀錄</a>
+                <div class="nested-nav-container" style="margin-top: 4px;">
+                    <a id="tab-portfolio-root" onclick="toggleLeftPortfolioMenu()">📂 備審資料 <span id="left-portfolio-arrow" style="font-size: 0.7rem; float: right; margin-top: 3px; transition: transform 0.2s;">▶</span></a>
+                    <div id="left-portfolio-list" style="display: none; padding-left: 12px; border-left: 1px solid #cbd5e1; margin-top: 4px;">
+                        <a id="subtab-course-rec" onclick="switchPortfolioPage('course-rec')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📊 A. 修課紀錄</a>
+                        <a id="subtab-study-result" onclick="switchPortfolioPage('study-result')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📝 B. 課程學習成果</a>
+                        <a id="subtab-multi-perf" onclick="switchPortfolioPage('multi-perf')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">🏆 C. 多元表現</a>
+                        <a id="subtab-multi-summary" onclick="switchPortfolioPage('multi-summary')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">💡 D1. 多元表現統整心得</a>
+                        <a id="subtab-learning-auto" onclick="switchPortfolioPage('learning-auto')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">👤 D2. 學習歷程自述</a>
+                        <a id="subtab-senior-guide" onclick="switchPortfolioPage('senior-guide')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">✨ 學姊的製作指南</a>
+                    </div>
+                    </div>
+                </div>
             </nav>
         </aside>
 
@@ -269,6 +281,41 @@
                 <h3 style="color: #3182ce; margin-top: 0;">💰 財務管理 (Financial Management)</h3>
                 <p><strong>單元一：貨幣的時間價值</strong></p>
                 <p>分析現值 (PV)、終值 (FV)、年金計算，以及公司資產評估與投資決策的精準分析。</p>
+            </section>
+            <section id="page-course-rec">
+                <h3 style="color: #3182ce; margin-top: 0;">📊 A. 修課紀錄</h3>
+                <p><strong>歷年課業表現與學分累積</strong></p>
+                <p>這裡未來可以用來展示你在校內的優異成績、各學期的排名走勢圖，或是特別亮眼的必修課成績（例如資訊管理、程式設計、統計學等）。</p>
+            </section>
+
+            <section id="page-study-result">
+                <h3 style="color: #3182ce; margin-top: 0;">📝 B. 課程學習成果</h3>
+                <p><strong>課堂專案與代表作品</strong></p>
+                <p>用來存放你最得意的課堂報告、期末專題。建議可以把報告摘要、核心技術邏輯寫在網頁上，再附上完整的 PDF 或 GitHub 專案連結。</p>
+            </section>
+
+            <section id="page-multi-perf">
+                <h3 style="color: #3182ce; margin-top: 0;">🏆 C. 多元表現</h3>
+                <p><strong>課外活動、證照與競賽紀錄</strong></p>
+                <p>不論是多益檢定、專業 IT 證照、擔任幹部帶領活動，還是任何黑客松或創新創業競賽的參賽證明，通通可以整理在這個精采舞台！</p>
+            </section>
+
+            <section id="page-multi-summary">
+                <h3 style="color: #3182ce; margin-top: 0;">💡 D1. 多元表現統整心得</h3>
+                <p><strong>反思與能力提煉</strong></p>
+                <p>將課外活動的經歷融會貫通。用極簡的條列文字告訴教授，你在這些多元活動中培養出了哪些軟實力（如溝通協調、團隊合作與危機處理能力）。</p>
+            </section>
+
+            <section id="page-learning-auto">
+                <h3 style="color: #3182ce; margin-top: 0;">👤 D2. 學習歷程自述</h3>
+                <p><strong>自傳、申請動機與未來規劃</strong></p>
+                <p>備審資料的靈魂！用精煉的文字訴說你的初衷、為什麼選擇這個領域，以及進入理想校系或職場後的短、中、長期學習規劃藍圖。</p>
+            </section>
+
+            <section id="page-senior-guide">
+                <h3 style="color: #3182ce; margin-top: 0;">✨ 學姊的製作指南</h3>
+                <p><strong>傳承給學弟妹的備審武林秘笈</strong></p>
+                <p>這裡可以用來記錄自己一路上整理作品集、打造高質感簡報模版的心得，或是回校演講、分享經驗時留下來的精華簡報與講稿紀錄！</p>
             </section>
 
         </main>
@@ -342,6 +389,14 @@
             // 高亮左欄被點選的科目，同時維持「學習筆記」大標題的高亮
             document.getElementById('subtab-' + courseId).classList.add('active');
             document.getElementById('tab-notes-root').classList.add('active');
+        }
+        // 💥 補上：左欄點擊「備審資料」下的各別項目時
+        function switchPortfolioPage(itemId) {
+            hideAllSections();
+            clearAllActiveTabs();
+            document.getElementById('page-' + itemId).classList.add('active');
+            document.getElementById('subtab-' + itemId).classList.add('active');
+            document.getElementById('tab-portfolio-root').classList.add('active');
         }
 
         // 工具函式：一鍵隱藏中欄所有內容區
