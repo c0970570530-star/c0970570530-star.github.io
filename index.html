@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠悠的數位生活基地</title>
     <style>
-        /* 基礎極簡配色 */
+        /* Nord 極簡色彩美學 */
         :root {
             --bg-color: #fafafa;
             --card-bg: #ffffff;
@@ -25,12 +25,11 @@
             line-height: 1.6;
         }
 
-        /* 橫幅頂圖（跟 Notion 一樣的 Banner） */
+        /* 橫幅頂圖 */
         .banner {
             width: 100%;
             height: 180px;
-            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-            object-fit: cover;
+            background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
         }
 
         /* 網頁主標題區 */
@@ -50,10 +49,10 @@
             color: var(--text-muted);
         }
 
-        /* 核心：三欄式 Grid 佈局 */
+        /* 三欄式 Grid 佈局 */
         .container {
             display: grid;
-            grid-template-columns: 240px 1fr 280px; /* 左欄固定240px, 中欄自動撐開, 右欄固定280px */
+            grid-template-columns: 240px 1fr 280px;
             gap: 24px;
             max-width: 1200px;
             margin: 30px auto;
@@ -61,7 +60,7 @@
             align-items: start;
         }
 
-        /* =================【左欄：分類選單】================= */
+        /* 【左欄：分類選單】 */
         .sidebar-left {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -79,7 +78,7 @@
         }
         .sidebar-left nav {
             display: flex;
-            flex-direction: column; /* 讓導覽標籤垂直排列 */
+            flex-direction: column;
             gap: 4px;
         }
         .sidebar-left nav a {
@@ -95,14 +94,13 @@
             background-color: var(--accent-bg);
             color: #000000;
         }
-        /* 被選中時的 Notion 風格灰色塊樣式 */
         .sidebar-left nav a.active {
             background-color: #e2e8f0;
             color: #000000;
             font-weight: 500;
         }
 
-        /* =================【中欄：核心內容區】================= */
+        /* 【中欄：核心內容區】 */
         .content-center {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -111,10 +109,10 @@
             min-height: 400px;
         }
         section {
-            display: none; /* 預設全部藏起來 */
+            display: none;
         }
         section.active {
-            display: block; /* 只有 active 的才顯示 */
+            display: block;
         }
         
         /* 條列式生活活動 */
@@ -133,7 +131,7 @@
         .log-desc { font-size: 0.85rem; color: var(--text-muted); margin: 6px 0 0 0; }
         .log-date { font-size: 0.85rem; color: var(--text-light); white-space: nowrap; font-family: monospace; }
 
-        /* =================【右欄：時間與待辦】================= */
+        /* 【右欄：時間與待辦】 */
         .sidebar-right {
             display: flex;
             flex-direction: column;
@@ -154,12 +152,10 @@
             align-items: center;
             gap: 6px;
         }
-        /* 待辦事項清單 */
         .todo-list { list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: var(--text-muted); }
         .todo-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
         .todo-item input[type="checkbox"] { accent-color: var(--text-main); }
 
-        /* 響應式：當螢幕太小時（如手機），自動擠成單欄方便閱讀 */
         @media (max-width: 900px) {
             .container { grid-template-columns: 1fr; }
             .sidebar-right { order: 3; }
@@ -168,7 +164,6 @@
 </head>
 <body>
 
-    <!-- 頂部圖片 -->
     <div class="banner"></div>
 
     <header class="main-header">
@@ -178,20 +173,17 @@
 
     <div class="container">
 
-        <!-- ─── 左欄：分類選單 ─── -->
-        aside class="sidebar-left">
+        <aside class="sidebar-left">
             <div class="sidebar-title">書櫃 / Category</div>
             <nav>
                 <a id="tab-log" class="active" onclick="switchTab('log')">📝 生活小事</a>
                 <a id="tab-notes" onclick="switchTab('notes')">🐍 Python 筆記</a>
-                <a id="tab-travel" onclick="switchTab('travel')">💎 追星紀錄</a>
+                <a id="tab-star" onclick="switchTab('star')">💎 追星紀錄</a>
             </nav>
         </aside>
 
-        <!-- ─── 中欄：主要切換內容 ─── -->
         <main class="content-center">
             
-            <!-- 生活小事分類 -->
             <section id="log" class="active">
                 <div class="log-item">
                     <div class="log-content">
@@ -200,41 +192,44 @@
                     </div>
                     <div class="log-date">2026.07</div>
                 </div>
+                <div class="log-item">
+                    <div class="log-content">
+                        <h3 class="log-title">新基地升級 ─ 改版為三欄式 Notion 看板佈局</h3>
+                        <p class="log-desc">利用 CSS Grid 重新排版，讓左、中、右空間能夠完美分配，視覺更清晰。</p>
+                    </div>
+                    <div class="log-date">2026.07.07</div>
+                </div>
             </section>
 
-            <!-- Python 筆記分類 -->
             <section id="notes">
                 <div class="log-item">
                     <div class="log-content">
                         <h3 class="log-title">Python 基礎與邏輯優化筆記</h3>
-                        <p class="log-desc">整理日常練習中遇到的檔案處理、資料運算與Debug心得。</p>
+                        <p class="log-desc">整理日常練習中遇到的 CSV 檔案處理、資料運算與排錯（Debug）心得。</p>
                     </div>
                     <div class="log-date">Running</div>
                 </div>
             </section>
 
-            <!-- 追星筆記分類 -->
-            <section id="travel">
+            <section id="star">
                 <div class="log-item">
                     <div class="log-content">
                         <h3 class="log-title">克拉島的小確幸 ─ 那些治癒靈魂的音樂與瞬間 💎</h3>
-                        <p class="log-desc">放鬆時最喜歡聽 SEVENTEEN 的歌，尤其是淨漢溫柔的嗓音。這裡未來會用來好好記錄每一次的回歸、舞台舞台、還有滿滿的追星小筆記與感動心得！</p>
+                        <p class="log-desc">放鬆時最喜歡聽 SEVENTEEN 的歌，尤其是淨漢溫柔的嗓音。這裡未來會用來好好記錄每一次的回歸、舞台、還有滿滿的追星小筆記與感動心得！</p>
                     </div>
                     <div class="log-date">Running</div>
                 </div>
             </section>
+
         </main>
 
-        <!-- ─── 右欄：時間與待辦小工具 ─── -->
         <aside class="sidebar-right">
             
-            <!-- 小工具 1：動態時鐘 -->
             <div class="widget-card">
                 <div class="widget-title">🕒 當前時間</div>
                 <div id="live-clock" style="font-size: 1.2rem; font-weight: bold; font-family: monospace; letter-spacing: 1px;">00:00:00</div>
             </div>
 
-            <!-- 小工具 2：便籤紙/待辦事項 -->
             <div class="widget-card">
                 <div class="widget-title">📌 便籤紙 / Todo</div>
                 <ul class="todo-list">
@@ -252,33 +247,32 @@
         <p>© 2026 Yunci. Built with GitHub Pages Layout.</p>
     </footer>
 
-    <!-- JavaScript 魔法：控制切換與時鐘 -->
     <script>
-        // 頁籤切換功能
+        // 修正後的頁籤切換功能
         function switchTab(tabId) {
             // 隱藏所有中欄區塊
             document.getElementById('log').classList.remove('active');
             document.getElementById('notes').classList.remove('active');
-            document.getElementById('travel').classList.remove('active');
+            document.getElementById('star').classList.remove('active');
             
             // 取消所有左欄選單的選取狀態
             document.getElementById('tab-log').classList.remove('active');
             document.getElementById('tab-notes').classList.remove('active');
-            document.getElementById('tab-travel').classList.remove('active');
+            document.getElementById('tab-star').classList.remove('active');
             
             // 顯示被點選的區塊與選單狀態
             document.getElementById(tabId).classList.add('active');
             document.getElementById('tab-' + tabId).classList.add('active');
         }
 
-        // 右側即時時鐘更新功能
+        // 即時時鐘
         function updateClock() {
             const now = new Date();
             const timeString = now.toLocaleTimeString('zh-TW', { hour12: false });
             document.getElementById('live-clock').innerText = timeString;
         }
         setInterval(updateClock, 1000);
-        updateClock(); // 網頁載入時立刻執行一次
+        updateClock();
     </script>
 </body>
 </html>
