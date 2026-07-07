@@ -3,37 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>悠悠的生活數位基地</title>
+    <title>悠悠's個人生活基地</title>
     <style>
+        /* 基礎極簡風格設定 */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #fafafa;
             color: #333;
-            max-width: 800px;
+            max-width: 750px;
             margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
+            padding: 50px 20px;
+            line-height: 1.7;
         }
-        h1 { color: #111; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
-        h2 { color: #444; margin-top: 30px; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 15px; }
+        
+        /* 個人頭像與標題區 */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #111;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .subtitle {
+            color: #888;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        /* 導覽標籤（未來可以連到不同頁面） */
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        nav a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #000; }
+
+        /* 區塊樣式 */
+        section { margin-bottom: 40px; }
+        h2 {
+            font-size: 1.3rem;
+            color: #222;
+            border-left: 3px solid #333;
+            padding-left: 12px;
+            margin-bottom: 20px;
+        }
+
+        /* 活動卡片樣式 */
+        .activity-card {
+            background: #ffffff;
+            padding: 22px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            margin-bottom: 15px;
+            border: 1px solid #f0f0f0;
+        }
+        .activity-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+            color: #111;
+        }
+        .tag {
+            background: #f0f0f0;
+            color: #666;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+        .date {
+            float: right;
+            color: #bbb;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
 
-    <h1>歡迎來到我的生活記錄</h1>
-    <p>這是我用 GitHub Pages 搭建的個人網站，用來記錄我生活上的一切活動與學習點滴！</p>
+    <header>
+        <h1>Yunci's Space</h1>
+        <div class="subtitle">記錄生活、學習與一切美好活動的數位基地</div>
+    </header>
 
-    <h2>當前活動專案</h2>
-    <div class="card">
-        <h3>學習筆記</h3>
-        <p>目前正在練習 Python 程式與資料處理，也會把一些筆記整理在這邊。</p>
-    </div>
+    <nav>
+        <a href="#about">關於我</a>
+        <a href="#activities">生活活動</a>
+        <a href="#learning">學習筆記</a>
+    </nav>
 
-    <div class="card">
-        <h3>生活點滴與休閒</h3>
-        <p>用來分享日常隨筆、日常活動，還有我喜歡的音樂與愛好。</p>
-    </div>
+    <!-- 關於我區塊 -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>歡迎來到我的個人網站！這裡是我用來打理與記錄生活所有活動的小天地。平常喜歡接觸數位設計、整理生活點滴，目前也在探索寫程式的樂趣，努力把每一天都過得充實且有條理！</p>
+    </section>
+
+    <!-- 生活活動區塊 -->
+    <section id="activities">
+        <h2>Life & Activities</h2>
+        
+        <div class="activity-card">
+            <span class="date">2026-07</span>
+            <h3>搭建個人專屬網站 🚀</h3>
+            <p><span class="tag">生活大事</span> <span class="tag">GitHub</span></p>
+            <p>April showers bring May floewrs.苦盡甘來</p>
+        </div>
+
+        <div class="activity-card">
+            <span class="date">日常</span>
+            <h3>日常休閒與音樂 🎵</h3>
+            <p><span class="tag">愛好</span> <span class="tag">SEVENTEEN</span></p>
+            <p>放鬆時最喜歡聽音樂。這裡未來會用來寫一些追星心得、劇評，或者是日常生活中的隨筆記錄。</p>
+        </div>
+    </section>
+
+    <!-- 學習筆記區塊 -->
+    <section id="learning">
+        <h2>Learning & Notes</h2>
+        
+        <div class="activity-card">
+            <span class="date">進行中</span>
+            <h3>Python 程式與資料處理 🐍</h3>
+            <p><span class="tag">程式學習</span> <span class="tag">Python</span></p>
+            <p>目前正在學習如何使用 Python 進行資料處理與邏輯優化，希望未來能把程式碼靈活運用在各種生活與學校的專案中。</p>
+        </div>
+    </section>
 
 </body>
 </html>
