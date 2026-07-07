@@ -12,7 +12,6 @@
             --text-muted: #4a5568;
             --text-light: #718096;
             --border-color: #edf2f7;
-            --accent-color: #3182ce; /* 點選時的強調藍色 */
         }
 
         body {
@@ -27,110 +26,31 @@
         }
 
         /* 標頭區 */
-        header {
-            margin-bottom: 30px;
-        }
-        h1 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin: 0 0 12px 0;
-            color: #1a202c;
-        }
-        .bio {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
+        header { margin-bottom: 30px; }
+        h1 { font-size: 1.6rem; font-weight: 600; margin: 0 0 12px 0; color: #1a202c; }
+        .bio { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
 
         /* 簡約導覽列 */
-        nav {
-            margin-bottom: 50px;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.85rem;
-            margin-right: 25px;
-            letter-spacing: 1px;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            padding-bottom: 14px;
-            border-bottom: 2px solid transparent;
-        }
-        /* 滑鼠懸停效果 */
-        nav a:hover {
-            color: #000000;
-        }
-        /* 被選中的導覽標籤樣式（下面會有一條黑線提示） */
-        nav a.active {
-            color: #000000;
-            font-weight: 600;
-            border-bottom: 2px solid #000000;
-        }
+        nav { margin-bottom: 50px; padding: 15px 0; border-bottom: 1px solid var(--border-color); }
+        nav a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; margin-right: 25px; letter-spacing: 1px; transition: all 0.2s ease; cursor: pointer; padding-bottom: 14px; border-bottom: 2px solid transparent; }
+        nav a:hover { color: #000000; }
+        /* 核心樣式：被選中的標籤會有黑字與底線 */
+        nav a.active { color: #000000; font-weight: 600; border-bottom: 2px solid #000000; }
 
-        /* 區塊設定：預設顯示，由 JavaScript 控制隱藏 */
-        section {
-            margin-bottom: 50px;
-            display: none; /* 預設先全部藏起來 */
-        }
-        /* 當區塊有 active 這個類別時才顯示 */
-        section.active {
-            display: block; 
-        }
+        /* 區塊設定：預設不顯示 */
+        section { margin-bottom: 50px; display: none; }
+        /* 當區塊有 active 類別時才顯示 */
+        section.active { display: block; }
         
-        h2 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-light);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
         /* 條列式活動清單 */
-        .log-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 16px 0;
-            border-bottom: 1px dashed var(--border-color);
-        }
-        .log-content {
-            flex: 1;
-            padding-right: 30px;
-        }
-        .log-title {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-main);
-            margin: 0;
-            transition: color 0.2s ease;
-        }
-        .log-title:hover {
-            color: var(--accent-color); 
-        }
-        .log-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 6px 0 0 0;
-        }
-        .log-date {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            white-space: nowrap;
-            font-family: monospace;
-            padding-top: 2px;
-        }
+        .log-item { display: flex; justify-content: space-between; align-items: flex-start; padding: 16px 0; border-bottom: 1px dashed var(--border-color); }
+        .log-content { flex: 1; padding-right: 30px; }
+        .log-title { font-size: 0.95rem; font-weight: 500; color: var(--text-main); margin: 0; }
+        .log-desc { font-size: 0.85rem; color: var(--text-muted); margin: 6px 0 0 0; }
+        .log-date { font-size: 0.85rem; color: var(--text-light); white-space: nowrap; font-family: monospace; padding-top: 2px; }
 
         /* 頁尾 */
-        footer {
-            margin-top: 100px;
-            font-size: 0.8rem;
-            color: var(--text-light);
-            text-align: center;
-        }
+        footer { margin-top: 100px; font-size: 0.8rem; color: var(--text-light); text-align: center; }
     </style>
 </head>
 <body>
@@ -146,8 +66,6 @@
     </nav>
 
     <section id="log" class="active">
-        <h2>Log / 生活活動</h2>
-        
         <div class="log-item">
             <div class="log-content">
                 <h3 class="log-title">日常隨筆 ─ 關於那些耳機裡重複播放的旋律</h3>
@@ -155,10 +73,9 @@
             </div>
             <div class="log-date">2026.07</div>
         </div>
-
         <div class="log-item">
             <div class="log-content">
-                <h3 class="log-title">新基地落成 ─ 用 GitHub Pages 開啟不花錢的架站實驗</h3>
+                <h3 class="log-title">新基地落成 ─ 用 GitHub Pages 開啟一個架站實驗</h3>
                 <p class="log-desc">參考了各大網站的架構，決定打造一個純粹且內斂的個人角落。</p>
             </div>
             <div class="log-date">2026.07</div>
@@ -166,10 +83,29 @@
     </section>
 
     <section id="notes">
-        <h2>Notes / 知識庫</h2>
-
         <div class="log-item">
             <div class="log-content">
-                <h3 class="log-title">Python 基礎與邏輯優化筆記</h3>
-                <p class="log-desc">學習如何優化程式邏輯，為未來的專案或學校報告打下乾淨的程式底子。</p>
+                <h3 class="log-title">（知識庫內容準備中）</h3>
+                <p class="log-desc">點選導覽標籤成功了！這裡未來可以放 Python 筆記。</p>
             </div>
+            <div class="log-date">2026.07.08</div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Yunci. Built with GitHub Pages.</p></footer>
+
+    <script>
+        function switchTab(tabId) {
+            // 1. 先把所有區塊都藏起來，取消所有標籤的 active
+            document.getElementById('log').classList.remove('active');
+            document.getElementById('notes').classList.remove('active');
+            document.getElementById('tab-log').classList.remove('active');
+            document.getElementById('tab-notes').classList.remove('active');
+            
+            // 2. 顯示被點選的區塊，並幫它的導覽標籤加上 active（底線與黑字）
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
