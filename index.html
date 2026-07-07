@@ -25,16 +25,6 @@
             line-height: 1.6;
         }
 
-        /* 橫幅頂圖 */
-        .banner {
-            width: 100%;
-            height: 250px; /* 稍微拉高一點，讓歐巴們更清晰 */
-            background-image: url('77.jpg'); /* 讀取你剛剛上傳的圖片 */
-            background-size: cover; /* 讓圖片自動填滿寬度 */
-            background-position: center; /* 圖片置中對齊 */
-            background-repeat: no-repeat;
-        }
-
         /* 網頁主標題區 */
         .main-header {
             max-width: 1200px;
@@ -52,7 +42,7 @@
             color: var(--text-muted);
         }
 
-        /* 三欄式 Grid 佈局 */
+        /* 三欄式 Grid 核心佈局 */
         .container {
             display: grid;
             grid-template-columns: 240px 1fr 280px;
@@ -63,7 +53,7 @@
             align-items: start;
         }
 
-        /* 【左欄：分類選單】 */
+        /* 【左欄：主分類選單】 */
         .sidebar-left {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -92,6 +82,7 @@
             border-radius: 8px;
             transition: all 0.2s ease;
             cursor: pointer;
+            display: block;
         }
         .sidebar-left nav a:hover {
             background-color: var(--accent-bg);
@@ -103,13 +94,21 @@
             font-weight: 500;
         }
 
+        /* 子選單容器 */
+        .submenu-list {
+            padding-left: 12px;
+            border-left: 1px solid #cbd5e1;
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+
         /* 【中欄：核心內容區】 */
         .content-center {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 24px;
-            min-height: 500px;
+            min-height: 440px;
         }
         section {
             display: none;
@@ -118,7 +117,7 @@
             display: block;
         }
         
-        /* 條列式生活活動 */
+        /* 條列式生活活動與追星 */
         .log-item {
             display: flex;
             justify-content: space-between;
@@ -155,30 +154,18 @@
             align-items: center;
             gap: 6px;
         }
-        /* 復古翻頁鐘佈局 */
-        .flip-clock-container {
-            display: flex;
-            gap: 8px; /* 方塊之間的間距 */
-            margin-bottom: 12px;
-        }
-            
-        /* 獨立黑色圓角方塊 */
-        .flip-block {
-            background-color: #000000;
-            color: #ffffff;
-            flex: 1;
-            text-align: center;
-            font-size: 2.2rem; /* 放大數字 */
-            font-weight: 700;
-            font-family: 'Impact', 'Arial Black', sans-serif; /* 粗體美式復古字型 */
-            padding: 10px 0;
-            border-radius: 12px; /* 圓角效果 */
-            letter-spacing: 2px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
         .todo-list { list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: var(--text-muted); }
         .todo-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
         .todo-item input[type="checkbox"] { accent-color: var(--text-main); }
+
+        /* 復古翻頁鐘 */
+        .flip-clock-container { display: flex; gap: 8px; margin-bottom: 12px; }
+        .flip-block {
+            background-color: #000000; color: #ffffff; flex: 1; text-align: center;
+            font-size: 2.2rem; font-weight: 700; font-family: 'Impact', 'Arial Black', sans-serif;
+            padding: 10px 0; border-radius: 12px; letter-spacing: 2px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .flip-clock-date { font-size: 0.95rem; color: var(--text-muted); font-weight: 500; padding-left: 2px; letter-spacing: 0.5px; }
 
         @media (max-width: 900px) {
             .container { grid-template-columns: 1fr; }
@@ -187,8 +174,12 @@
     </style>
 </head>
 <body>
+
+    <div class="banner"></div>
+
     <header class="main-header">
-        <h1>看似尋常的日常，都是值得留在網路上細細品味的活動紀錄。</h1>
+        <h1>悠悠的數位生活基地</h1>
+        <p class="bio">看似尋常的日常，都是值得留在網路上細細品味的活動紀錄。</p>
     </header>
 
     <div class="container">
@@ -200,31 +191,29 @@
                 
                 <div class="nested-nav-container">
                     <a id="tab-notes-root" onclick="toggleLeftNotesMenu()">🐍 學習筆記 <span id="left-menu-arrow" style="font-size: 0.7rem; float: right; margin-top: 3px; transition: transform 0.2s;">▶</span></a>
-                    <div id="left-submenu-list" style="display: none; padding-left: 12px; border-left: 1px solid #cbd5e1; margin-top: 4px;">
-                        <a id="subtab-calculus" onclick="switchCoursePage('calculus')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📐 微積分</a>
-                        <a id="subtab-cs" onclick="switchCoursePage('cs')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">💻 計算機概論</a>
-                        <a id="subtab-management" onclick="switchCoursePage('management')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📊 管理學</a>
-                        <a id="subtab-accounting" onclick="switchCoursePage('accounting')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">🧾 會計學</a>
-                        <a id="subtab-economics" onclick="switchCoursePage('economics')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📈 經濟學</a>
-                        <a id="subtab-finance" onclick="switchCoursePage('finance')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">💰 財務管理</a>
+                    <div id="left-submenu-list" class="submenu-list" style="display: none;">
+                        <a id="subtab-calculus" onclick="switchCoursePage('calculus')" style="font-size: 0.85rem; padding: 6px 10px;">📐 微積分</a>
+                        <a id="subtab-cs" onclick="switchCoursePage('cs')" style="font-size: 0.85rem; padding: 6px 10px;">💻 計算機概論</a>
+                        <a id="subtab-management" onclick="switchCoursePage('management')" style="font-size: 0.85rem; padding: 6px 10px;">📊 管理學</a>
+                        <a id="subtab-accounting" onclick="switchCoursePage('accounting')" style="font-size: 0.85rem; padding: 6px 10px;">🧾 會計學</a>
+                        <a id="subtab-economics" onclick="switchCoursePage('economics')" style="font-size: 0.85rem; padding: 6px 10px;">📈 經濟學</a>
+                        <a id="subtab-finance" onclick="switchCoursePage('finance')" style="font-size: 0.85rem; padding: 6px 10px;">💰 財務管理</a>
+                    </div>
+                </div>
+
+                <div class="nested-nav-container">
+                    <a id="tab-portfolio-root" onclick="toggleLeftPortfolioMenu()">📂 備審資料 <span id="left-portfolio-arrow" style="font-size: 0.7rem; float: right; margin-top: 3px; transition: transform 0.2s;">▶</span></a>
+                    <div id="left-portfolio-list" class="submenu-list" style="display: none;">
+                        <a id="subtab-course-rec" onclick="switchPortfolioPage('course-rec')" style="font-size: 0.85rem; padding: 6px 10px;">📊 A. 修課紀錄</a>
+                        <a id="subtab-study-result" onclick="switchPortfolioPage('study-result')" style="font-size: 0.85rem; padding: 6px 10px;">📝 B. 課程學習成果</a>
+                        <a id="subtab-multi-perf" onclick="switchPortfolioPage('multi-perf')" style="font-size: 0.85rem; padding: 6px 10px;">🏆 C. 多元表現</a>
+                        <a id="subtab-multi-summary" onclick="switchPortfolioPage('multi-summary')" style="font-size: 0.85rem; padding: 6px 10px;">💡 D1. 多元表現統整心得</a>
+                        <a id="subtab-learning-auto" onclick="switchPortfolioPage('learning-auto')" style="font-size: 0.85rem; padding: 6px 10px;">👤 D2. 學習歷程自述</a>
+                        <a id="subtab-senior-guide" onclick="switchPortfolioPage('senior-guide')" style="font-size: 0.85rem; padding: 6px 10px;">✨ 學姊的製作指南</a>
                     </div>
                 </div>
 
                 <a id="tab-star" onclick="switchTab('star')">💎 追星紀錄</a>
-
-                <div class="nested-nav-container" style="margin-top: 4px;">
-                    <a id="tab-portfolio-root" onclick="toggleLeftPortfolioMenu()">📂 備審資料 <span id="left-portfolio-arrow" style="font-size: 0.7rem; float: right; margin-top: 3px; transition: transform 0.2s;">▶</span></a>
-                    <div id="left-portfolio-list" style="display: none; padding-left: 12px; border-left: 1px solid #cbd5e1; margin-top: 4px;">
-                        <a id="subtab-course-rec" onclick="switchPortfolioPage('course-rec')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📊 A. 修課紀錄</a>
-                        <a id="subtab-study-result" onclick="switchPortfolioPage('study-result')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📝 B. 課程學習成果</a>
-                        <a id="subtab-multi-perf" onclick="switchPortfolioPage('multi-perf')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">🏆 C. 多元表現</a>
-                        <a id="subtab-multi-summary" onclick="switchPortfolioPage('multi-summary')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">💡 D1. 多元表現統整心得</a>
-                        <a id="subtab-learning-auto" onclick="switchPortfolioPage('learning-auto')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">👤 D2. 學習歷程自述</a>
-                        <a id="subtab-senior-guide" onclick="switchPortfolioPage('senior-guide')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">✨ 學姊的製作指南</a>
-                    </div>
-                    </div>
-                </div>
-                
             </nav>
         </aside>
 
@@ -284,67 +273,57 @@
                 <p><strong>單元一：貨幣的時間價值</strong></p>
                 <p>分析現值 (PV)、終值 (FV)、年金計算，以及公司資產評估與投資決策的精準分析。</p>
             </section>
-            
+
             <section id="page-course-rec">
                 <h3 style="color: #3182ce; margin-top: 0;">📊 A. 修課紀錄</h3>
-                <p><strong>歷年課業表現與學分累積</strong></p>
-                <p>這裡未來可以用來展示你在校內的優異成績、各學期的排名走勢圖，或是特別亮眼的必修課成績（例如資訊管理、程式設計、統計學等）。</p>
+                <p>這裡未來可以用來展示你在校內的優異成績、各學期的排名走勢圖，或是特別亮眼的必修課成績。</p>
             </section>
 
             <section id="page-study-result">
                 <h3 style="color: #3182ce; margin-top: 0;">📝 B. 課程學習成果</h3>
-                <p><strong>課堂專案與代表作品</strong></p>
-                <p>用來存放你最得意的課堂報告、期末專題。建議可以把報告摘要、核心技術邏輯寫在網頁上，再附上完整的 PDF 或 GitHub 專案連結。</p>
+                <p>用來存放你最得意的課堂報告、期末專題。建議可以把報告摘要、核心技術邏輯寫在網頁上。</p>
             </section>
 
             <section id="page-multi-perf">
                 <h3 style="color: #3182ce; margin-top: 0;">🏆 C. 多元表現</h3>
-                <p><strong>課外活動、證照與競賽紀錄</strong></p>
-                <p>不論是多益檢定、專業 IT 證照、擔任幹部帶領活動，還是任何黑客松或創新創業競賽的參賽證明，通通可以整理在這個精采舞台！</p>
+                <p>不論是多益檢定、專業 IT 證照、擔任幹部帶領活動，還是任何競賽的參賽證明，通通可以整理在這個精采舞台！</p>
             </section>
 
             <section id="page-multi-summary">
                 <h3 style="color: #3182ce; margin-top: 0;">💡 D1. 多元表現統整心得</h3>
-                <p><strong>反思與能力提煉</strong></p>
-                <p>將課外活動的經歷融會貫通。用極簡的條列文字告訴教授，你在這些多元活動中培養出了哪些軟實力（如溝通協調、團隊合作與危機處理能力）。</p>
+                <p>將課外活動的經歷融會貫通。用極簡的條列文字告訴教授，你在這些多元活動中培養出了哪些軟實力。</p>
             </section>
 
             <section id="page-learning-auto">
                 <h3 style="color: #3182ce; margin-top: 0;">👤 D2. 學習歷程自述</h3>
-                <p><strong>自傳、申請動機與未來規劃</strong></p>
-                <p>備審資料的靈魂！用精煉的文字訴說你的初衷、為什麼選擇這個領域，以及進入理想校系或職場後的短、中、長期學習規劃藍圖。</p>
+                <p>備審資料的靈魂！用精煉的文字訴說你的初初衷、為什麼選擇這個領域，以及未來的規劃藍圖。</p>
             </section>
 
             <section id="page-senior-guide">
                 <h3 style="color: #3182ce; margin-top: 0;">✨ 學姊的製作指南</h3>
-                <p><strong>傳承給學弟妹的備審武林秘笈</strong></p>
-                <p>這裡可以用來記錄自己一路上整理作品集、打造高質感簡報模版的心得，或是回校演講、分享經驗時留下來的精華簡報與講稿紀錄！</p>
+                <p>這裡可以用來記錄自己一路上整理作品集的心得，或是分享經驗時留下來的精華簡報與講稿紀錄！</p>
             </section>
 
         </main>
 
         <aside class="sidebar-right">
-            
-        <div class="widget-card" style="background: none; border: none; padding: 0;">
-            <div class="flip-clock-container">
-                <!-- 時 -->
-                <div class="flip-block" id="clock-hour">00</div>
-                <!-- 分 -->
-                <div class="flip-block" id="clock-min">00</div>
-                <!-- 秒 -->
-                <div class="flip-block" id="clock-sec">00</div>
+            <div class="widget-card" style="background: none; border: none; padding: 0;">
+                <div class="flip-clock-container">
+                    <div class="flip-block" id="clock-hour">00</div>
+                    <div class="flip-block" id="clock-min">00</div>
+                    <div class="flip-block" id="clock-sec">00</div>
+                </div>
+                <div id="clock-date" class="flip-clock-date">2026年7月7日週二</div>
             </div>
-        </div>
 
             <div class="widget-card">
-                <div class="widget-title">📌 待辦事項 / Todo</div>
+                <div class="widget-title">📌 便籤紙 / Todo</div>
                 <ul class="todo-list">
-                    <li class="todo-item"><input type="checkbox"> 搞定 GitHub Pages 網址</li>
-                    <li class="todo-item"><input type="checkbox"> 整理一篇 Python 資料處理筆記</li>
+                    <li class="todo-item"><input type="checkbox"> 搞定三欄式網頁佈局</li>
+                    <li class="todo-item"><input type="checkbox"> 雙目錄預設隱藏優化</li>
                     <li class="todo-item"><input type="checkbox"> 聽完 SEVENTEEN 最新回歸專輯 🎧</li>
                 </ul>
             </div>
-
         </aside>
 
     </div>
@@ -356,44 +335,48 @@
     <script>
         // 大分類切換（生活小事、追星紀錄）
         function switchTab(tabId) {
-            // 隱藏全部中欄區塊
             hideAllSections();
-            
-            // 取消左欄所有大分類與子科目的 active 樣式
             clearAllActiveTabs();
-            
-            // 顯示對應大分類，並將大分類按鈕高亮
             document.getElementById(tabId).classList.add('active');
             document.getElementById('tab-' + tabId).classList.add('active');
         }
 
-        // 💥 左欄「學習筆記」大標題點擊：控制科目子選單展開/收合
+        // 控制左欄「學習筆記」子選單展開收合
         function toggleLeftNotesMenu() {
             const submenu = document.getElementById('left-submenu-list');
             const arrow = document.getElementById('left-menu-arrow');
-            
-            // 如果目前是隱藏的，點擊後就展開
             if (submenu.style.display === 'none') {
                 submenu.style.display = 'block';
-                arrow.style.transform = 'rotate(90deg)'; // 展開時箭頭轉成向下
+                arrow.style.transform = 'rotate(90deg)';
             } else {
-                // 如果目前是展開的，點擊後就收合
                 submenu.style.display = 'none';
-                arrow.style.transform = 'rotate(0deg)';  // 收合時箭頭恢復向右
+                arrow.style.transform = 'rotate(0deg)';
             }
         }
-        // 💥 左欄點擊各別「科目」時，切換中欄內容
+
+        // 控制左欄「備審資料」子選單展開收合
+        function toggleLeftPortfolioMenu() {
+            const submenu = document.getElementById('left-portfolio-list');
+            const arrow = document.getElementById('left-portfolio-arrow');
+            if (submenu.style.display === 'none') {
+                submenu.style.display = 'block';
+                arrow.style.transform = 'rotate(90deg)';
+            } else {
+                submenu.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // 左欄點擊「學習筆記」子科目
         function switchCoursePage(courseId) {
             hideAllSections();
             clearAllActiveTabs();
-            
-            // 顯示對應科目的中欄筆記
             document.getElementById('page-' + courseId).classList.add('active');
-            // 高亮左欄被點選的科目，同時維持「學習筆記」大標題的高亮
             document.getElementById('subtab-' + courseId).classList.add('active');
             document.getElementById('tab-notes-root').classList.add('active');
         }
-        // 💥 補上：左欄點擊「備審資料」下的各別項目時
+
+        // 左欄點擊「備審資料」子項目
         function switchPortfolioPage(itemId) {
             hideAllSections();
             clearAllActiveTabs();
@@ -402,24 +385,25 @@
             document.getElementById('tab-portfolio-root').classList.add('active');
         }
 
-        // 工具函式：一鍵隱藏中欄所有內容區
+        // 一鍵隱藏中欄所有內容
         function hideAllSections() {
             const sections = document.querySelectorAll('.content-center section');
             sections.forEach(sec => sec.classList.remove('active'));
         }
 
-        // 工具函式：一鍵清除左欄所有按鈕的高亮狀態
+        // 一鍵清除左欄所有高亮
         function clearAllActiveTabs() {
             const activeTabs = document.querySelectorAll('.sidebar-left a');
             activeTabs.forEach(tab => tab.classList.remove('active'));
         }
 
-        // 復古翻頁鐘（保留原本的即可，以下供參考對齊）
+        // 時鐘動態運作
         function updateClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
+            
             document.getElementById('clock-hour').innerText = hours;
             document.getElementById('clock-min').innerText = minutes;
             document.getElementById('clock-sec').innerText = seconds;
