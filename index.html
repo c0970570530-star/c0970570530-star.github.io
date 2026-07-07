@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠悠的數位生活基地</title>
     <style>
-        /* Nord 極簡色彩美學：加深灰色，提升清晰度 */
+        /* Nord 極簡色彩美學 */
         :root {
             --bg-color: #ffffff;
             --text-main: #2d3748;
-            --text-muted: #4a5568;  /* 沉穩中灰 */
-            --text-light: #718096;  /* 質感深灰（日期專用） */
+            --text-muted: #4a5568;
+            --text-light: #718096;
             --border-color: #edf2f7;
+            --accent-color: #3182ce; /* 點選時的強調藍色 */
         }
 
         body {
@@ -51,19 +52,34 @@
             color: var(--text-light);
             text-decoration: none;
             font-size: 0.85rem;
-            margin-right: 20px;
+            margin-right: 25px;
             letter-spacing: 1px;
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            padding-bottom: 14px;
+            border-bottom: 2px solid transparent;
         }
+        /* 滑鼠懸停效果 */
         nav a:hover {
             color: #000000;
         }
+        /* 被選中的導覽標籤樣式（下面會有一條黑線提示） */
+        nav a.active {
+            color: #000000;
+            font-weight: 600;
+            border-bottom: 2px solid #000000;
+        }
 
-        /* 區塊設定 */
+        /* 區塊設定：預設顯示，由 JavaScript 控制隱藏 */
         section {
             margin-bottom: 50px;
-            scroll-margin-top: 30px; /* 讓點擊導覽跳轉時留有空間 */
+            display: none; /* 預設先全部藏起來 */
         }
+        /* 當區塊有 active 這個類別時才顯示 */
+        section.active {
+            display: block; 
+        }
+        
         h2 {
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -73,7 +89,7 @@
             font-weight: 600;
         }
 
-        /* 條列式生活活動：優化對齊邏輯 */
+        /* 條列式活動清單 */
         .log-item {
             display: flex;
             justify-content: space-between;
@@ -91,11 +107,9 @@
             color: var(--text-main);
             margin: 0;
             transition: color 0.2s ease;
-            cursor: pointer;
         }
-        /* 滑鼠懸停在標題上的視覺回饋 */
         .log-title:hover {
-            color: #3182ce; 
+            color: var(--accent-color); 
         }
         .log-desc {
             font-size: 0.85rem;
@@ -127,22 +141,26 @@
     </header>
 
     <nav>
-        <a href="#log">LOG / 生活活動</a>
-        <a href="#notes">NOTES / 知識庫</a>
+        <a id="tab-log" class="active" onclick="switchTab('log')">LOG / 生活活動</a>
+        <a id="tab-notes" onclick="switchTab('notes')">NOTES / 知識庫</a>
     </nav>
 
-    <section id="log">
+    <section id="log" class="active">
         <h2>Log / 生活活動</h2>
         
         <div class="log-item">
             <div class="log-content">
-                <h3 class="log-title">日常隨筆─關於那些耳機裡重複播放的旋律</h3>
+                <h3 class="log-title">日常隨筆 ─ 關於那些耳機裡重複播放的旋律</h3>
                 <p class="log-desc">記錄一些放鬆時聽的音樂，以及生活裡偶然閃過的零碎想法。</p>
             </div>
             <div class="log-date">2026.07</div>
         </div>
 
         <div class="log-item">
+            <div class="log-content">
+                <h3 class="log-title">新基地落成 ─ 用 GitHub Pages 開啟不花錢的架站實驗</h3>
+                <p class="log-desc">參考了各大網站的架構，決定打造一個純粹且內斂的個人角落。</p>
+            </div>
             <div class="log-date">2026.07</div>
         </div>
     </section>
@@ -155,13 +173,3 @@
                 <h3 class="log-title">Python 基礎與邏輯優化筆記</h3>
                 <p class="log-desc">學習如何優化程式邏輯，為未來的專案或學校報告打下乾淨的程式底子。</p>
             </div>
-            <div class="log-date">Running</div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 Yunci. Built with GitHub Pages.</p>
-    </footer>
-
-</body>
-</html>
