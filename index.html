@@ -5,102 +5,280 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>悠悠的數位生活基地</title>
     <style>
-        /* Nord 極簡色彩美學 */
+        /* 基礎極簡配色 */
         :root {
-            --bg-color: #ffffff;
+            --bg-color: #fafafa;
+            --card-bg: #ffffff;
             --text-main: #2d3748;
             --text-muted: #4a5568;
             --text-light: #718096;
             --border-color: #edf2f7;
+            --accent-bg: #f7fafc;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 80px 24px;
-            line-height: 1.8;
-            letter-spacing: 0.5px;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
         }
 
-        /* 標頭區 */
-        header { margin-bottom: 30px; }
-        h1 { font-size: 1.6rem; font-weight: 600; margin: 0 0 12px 0; color: #1a202c; }
-        .bio { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+        /* 橫幅頂圖（跟 Notion 一樣的 Banner） */
+        .banner {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+            object-fit: cover;
+        }
 
-        /* 簡約導覽列 */
-        nav { margin-bottom: 50px; padding: 15px 0; border-bottom: 1px solid var(--border-color); }
-        nav a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; margin-right: 25px; letter-spacing: 1px; transition: all 0.2s ease; cursor: pointer; padding-bottom: 14px; border-bottom: 2px solid transparent; }
-        nav a:hover { color: #000000; }
-        /* 核心樣式：被選中的標籤會有黑字與底線 */
-        nav a.active { color: #000000; font-weight: 600; border-bottom: 2px solid #000000; }
+        /* 網頁主標題區 */
+        .main-header {
+            max-width: 1200px;
+            margin: 30px auto 0 auto;
+            padding: 0 24px;
+        }
+        .main-header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #1a202c;
+        }
+        .main-header .bio {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
 
-        /* 區塊設定：預設不顯示 */
-        section { margin-bottom: 50px; display: none; }
-        /* 當區塊有 active 類別時才顯示 */
-        section.active { display: block; }
+        /* 核心：三欄式 Grid 佈局 */
+        .container {
+            display: grid;
+            grid-template-columns: 240px 1fr 280px; /* 左欄固定240px, 中欄自動撐開, 右欄固定280px */
+            gap: 24px;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 24px;
+            align-items: start;
+        }
+
+        /* =================【左欄：分類選單】================= */
+        .sidebar-left {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .sidebar-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-left: 8px;
+        }
+        .sidebar-left nav {
+            display: flex;
+            flex-direction: column; /* 讓導覽標籤垂直排列 */
+            gap: 4px;
+        }
+        .sidebar-left nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 10px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .sidebar-left nav a:hover {
+            background-color: var(--accent-bg);
+            color: #000000;
+        }
+        /* 被選中時的 Notion 風格灰色塊樣式 */
+        .sidebar-left nav a.active {
+            background-color: #e2e8f0;
+            color: #000000;
+            font-weight: 500;
+        }
+
+        /* =================【中欄：核心內容區】================= */
+        .content-center {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            min-height: 400px;
+        }
+        section {
+            display: none; /* 預設全部藏起來 */
+        }
+        section.active {
+            display: block; /* 只有 active 的才顯示 */
+        }
         
-        /* 條列式活動清單 */
-        .log-item { display: flex; justify-content: space-between; align-items: flex-start; padding: 16px 0; border-bottom: 1px dashed var(--border-color); }
-        .log-content { flex: 1; padding-right: 30px; }
+        /* 條列式生活活動 */
+        .log-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .log-item:last-child {
+            border-bottom: none;
+        }
+        .log-content { flex: 1; padding-right: 20px; }
         .log-title { font-size: 0.95rem; font-weight: 500; color: var(--text-main); margin: 0; }
         .log-desc { font-size: 0.85rem; color: var(--text-muted); margin: 6px 0 0 0; }
-        .log-date { font-size: 0.85rem; color: var(--text-light); white-space: nowrap; font-family: monospace; padding-top: 2px; }
+        .log-date { font-size: 0.85rem; color: var(--text-light); white-space: nowrap; font-family: monospace; }
 
-        /* 頁尾 */
-        footer { margin-top: 100px; font-size: 0.8rem; color: var(--text-light); text-align: center; }
+        /* =================【右欄：時間與待辦】================= */
+        .sidebar-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .widget-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+        }
+        .widget-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0 0 12px 0;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        /* 待辦事項清單 */
+        .todo-list { list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: var(--text-muted); }
+        .todo-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .todo-item input[type="checkbox"] { accent-color: var(--text-main); }
+
+        /* 響應式：當螢幕太小時（如手機），自動擠成單欄方便閱讀 */
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar-right { order: 3; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
+    <!-- 頂部圖片 -->
+    <div class="banner"></div>
+
+    <header class="main-header">
         <h1>悠悠的數位生活基地</h1>
         <p class="bio">看似尋常的日常，都是值得留在網路上細細品味的活動紀錄。</p>
     </header>
 
-    <nav>
-        <a id="tab-log" class="active" onclick="switchTab('log')">LOG / 生活活動</a>
-        <a id="tab-notes" onclick="switchTab('notes')">NOTES / 知識庫</a>
-    </nav>
+    <div class="container">
 
-    <section id="log" class="active">
-        <div class="log-item">
-            <div class="log-content">
-                <h3 class="log-title">日常隨筆 ─ 關於那些耳機裡重複播放的旋律</h3>
-                <p class="log-desc">記錄一些放鬆時聽的音樂，以及生活裡偶然閃過的零碎想法。</p>
+        <!-- ─── 左欄：分類選單 ─── -->
+        aside class="sidebar-left">
+            <div class="sidebar-title">書櫃 / Category</div>
+            <nav>
+                <a id="tab-log" class="active" onclick="switchTab('log')">📝 生活小事</a>
+                <a id="tab-notes" onclick="switchTab('notes')">🐍 Python 筆記</a>
+                <a id="tab-travel" onclick="switchTab('travel')">💎 追星紀錄</a>
+            </nav>
+        </aside>
+
+        <!-- ─── 中欄：主要切換內容 ─── -->
+        <main class="content-center">
+            
+            <!-- 生活小事分類 -->
+            <section id="log" class="active">
+                <div class="log-item">
+                    <div class="log-content">
+                        <h3 class="log-title">日常隨筆 ─ 關於那些耳機裡重複播放的旋律</h3>
+                        <p class="log-desc">記錄一些放鬆時聽的音樂，以及生活裡偶然閃過的零碎想法。</p>
+                    </div>
+                    <div class="log-date">2026.07</div>
+                </div>
+            </section>
+
+            <!-- Python 筆記分類 -->
+            <section id="notes">
+                <div class="log-item">
+                    <div class="log-content">
+                        <h3 class="log-title">Python 基礎與邏輯優化筆記</h3>
+                        <p class="log-desc">整理日常練習中遇到的檔案處理、資料運算與Debug心得。</p>
+                    </div>
+                    <div class="log-date">Running</div>
+                </div>
+            </section>
+
+            <!-- 追星筆記分類 -->
+            <section id="travel">
+                <div class="log-item">
+                    <div class="log-content">
+                        <h3 class="log-title">克拉島的小確幸 ─ 那些治癒靈魂的音樂與瞬間 💎</h3>
+                        <p class="log-desc">放鬆時最喜歡聽 SEVENTEEN 的歌，尤其是淨漢溫柔的嗓音。這裡未來會用來好好記錄每一次的回歸、舞台舞台、還有滿滿的追星小筆記與感動心得！</p>
+                    </div>
+                    <div class="log-date">Running</div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ─── 右欄：時間與待辦小工具 ─── -->
+        <aside class="sidebar-right">
+            
+            <!-- 小工具 1：動態時鐘 -->
+            <div class="widget-card">
+                <div class="widget-title">🕒 當前時間</div>
+                <div id="live-clock" style="font-size: 1.2rem; font-weight: bold; font-family: monospace; letter-spacing: 1px;">00:00:00</div>
             </div>
-            <div class="log-date">2026.07</div>
-        </div>
-        <div class="log-item">
-        </div>
-    </section>
 
-    <section id="notes">
-        <div class="log-item">
-            <div class="log-content">
-                <h3 class="log-title">（知識庫內容準備中）</h3>
-                <p class="log-desc">點選導覽標籤成功了！這裡未來可以放 Python 筆記。</p>
+            <!-- 小工具 2：便籤紙/待辦事項 -->
+            <div class="widget-card">
+                <div class="widget-title">📌 便籤紙 / Todo</div>
+                <ul class="todo-list">
+                    <li class="todo-item"><input type="checkbox" checked> 搞定 GitHub Pages 網址</li>
+                    <li class="todo-item"><input type="checkbox"> 整理一篇 Python 資料處理筆記</li>
+                    <li class="todo-item"><input type="checkbox"> 聽完 SEVENTEEN 最新回歸專輯 🎧</li>
+                </ul>
             </div>
-            <div class="log-date">2026.07.08</div>
-        </div>
-    </section>
 
-    <footer><p>© 2026 Yunci. Built with GitHub Pages.</p></footer>
+        </aside>
 
+    </div>
+
+    <footer>
+        <p>© 2026 Yunci. Built with GitHub Pages Layout.</p>
+    </footer>
+
+    <!-- JavaScript 魔法：控制切換與時鐘 -->
     <script>
+        // 頁籤切換功能
         function switchTab(tabId) {
-            // 1. 先把所有區塊都藏起來，取消所有標籤的 active
+            // 隱藏所有中欄區塊
             document.getElementById('log').classList.remove('active');
             document.getElementById('notes').classList.remove('active');
+            document.getElementById('travel').classList.remove('active');
+            
+            // 取消所有左欄選單的選取狀態
             document.getElementById('tab-log').classList.remove('active');
             document.getElementById('tab-notes').classList.remove('active');
+            document.getElementById('tab-travel').classList.remove('active');
             
-            // 2. 顯示被點選的區塊，並幫它的導覽標籤加上 active（底線與黑字）
+            // 顯示被點選的區塊與選單狀態
             document.getElementById(tabId).classList.add('active');
             document.getElementById('tab-' + tabId).classList.add('active');
         }
+
+        // 右側即時時鐘更新功能
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('zh-TW', { hour12: false });
+            document.getElementById('live-clock').innerText = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // 網頁載入時立刻執行一次
     </script>
 </body>
 </html>
