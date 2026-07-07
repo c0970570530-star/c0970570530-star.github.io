@@ -3,140 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>悠悠's個人生活基地</title>
+    <title>悠悠的數位生活基地</title>
     <style>
-        /* 基礎極簡風格設定 */
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #fafafa;
-            color: #333;
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 50px 20px;
-            line-height: 1.7;
+        /* 採用 Nord 極簡色彩美學：純白底色、冷灰字體、深黑強調 */
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #2e3440;
+            --text-muted: #4c566a;
+            --text-light: #b8bbc1;
+            --border-color: #eceff4;
         }
-        
-        /* 個人頭像與標題區 */
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        /* 標頭：極度克制，不帶一絲贅肉 */
         header {
-            text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         h1 {
-            font-size: 2rem;
-            color: #111;
-            margin-bottom: 5px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin: 0 0 8px 0;
+            color: #000;
+        }
+        .bio {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* 分類區塊 */
+        section {
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 20px;
             font-weight: 600;
         }
-        .subtitle {
-            color: #888;
+
+        /* 條列式生活活動：取消框線卡片，改用留白與點綴線，比教授的條列更具現代感 */
+        .log-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .log-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .log-title {
             font-size: 0.95rem;
-            letter-spacing: 1px;
-        }
-
-        /* 導覽標籤（未來可以連到不同頁面） */
-        nav {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
-        nav a {
-            color: #666;
+            font-weight: 500;
+            color: var(--text-main);
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9rem;
-            transition: color 0.3s;
         }
-        nav a:hover { color: #000; }
-
-        /* 區塊樣式 */
-        section { margin-bottom: 40px; }
-        h2 {
-            font-size: 1.3rem;
-            color: #222;
-            border-left: 3px solid #333;
-            padding-left: 12px;
-            margin-bottom: 20px;
-        }
-
-        /* 活動卡片樣式 */
-        .activity-card {
-            background: #ffffff;
-            padding: 22px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-            margin-bottom: 15px;
-            border: 1px solid #f0f0f0;
-        }
-        .activity-card h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.1rem;
-            color: #111;
-        }
-        .tag {
-            background: #f0f0f0;
-            color: #666;
-            font-size: 0.75rem;
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-right: 5px;
-        }
-        .date {
-            float: right;
-            color: #bbb;
+        .log-desc {
             font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 4px 0 0 0;
+        }
+        .log-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            white-space: nowrap;
+            font-family: monospace;
+        }
+
+        /* 底部頁尾 */
+        footer {
+            margin-top: 100px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Yunci's Space</h1>
-        <div class="subtitle">記錄生活、學習與一切美好活動的數位基地</div>
+        <h1>Yunci's Journal</h1>
+        <p class="bio">看似尋常的日常，都是值得留在網路上細細品味的活動紀錄。</p>
     </header>
 
-    <nav>
-        <a href="#about">關於我</a>
-        <a href="#activities">生活活動</a>
-        <a href="#learning">學習筆記</a>
-    </nav>
-
-    <!-- 關於我區塊 -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>歡迎來到我的個人網站！這裡是我用來打理與記錄生活所有活動的小天地。平常喜歡接觸數位設計、整理生活點滴，目前也在探索寫程式的樂趣，努力把每一天都過得充實且有條理！</p>
-    </section>
-
     <!-- 生活活動區塊 -->
-    <section id="activities">
-        <h2>Life & Activities</h2>
+    <section>
+        <h2>Log / 生活活動</h2>
         
-        <div class="activity-card">
-            <span class="date">2026-07</span>
-            <h3>搭建個人專屬網站 🚀</h3>
-            <p><span class="tag">生活大事</span> <span class="tag">GitHub</span></p>
-            <p>April showers bring May floewrs.苦盡甘來</p>
+        <div class="log-item">
+            <div class="log-date">2026.07</div>
         </div>
 
-        <div class="activity-card">
-            <span class="date">日常</span>
-            <h3>日常休閒與音樂 🎵</h3>
-            <p><span class="tag">愛好</span> <span class="tag">SEVENTEEN</span></p>
-            <p>放鬆時最喜歡聽音樂。這裡未來會用來寫一些追星心得、劇評，或者是日常生活中的隨筆記錄。</p>
+        <div class="log-item">
+            <div class="log-content">
+                <div class="log-title">日常隨筆─關於那些耳機裡重複播放的旋律</div>
+                <p class="log-desc">記錄一些放鬆時聽的音樂，以及生活裡偶然閃過的零碎想法。</p>
+            </div>
+            <div class="log-date">2026.07.01</div>
         </div>
     </section>
 
     <!-- 學習筆記區塊 -->
-    <section id="learning">
-        <h2>Learning & Notes</h2>
-        
-        <div class="activity-card">
-            <span class="date">進行中</span>
-            <h3>Python 程式與資料處理 🐍</h3>
-            <p><span class="tag">程式學習</span> <span class="tag">Python</span></p>
-            <p>目前正在學習如何使用 Python 進行資料處理與邏輯優化，希望未來能把程式碼靈活運用在各種生活與學校的專案中。</p>
+    <section>
+        <h2>Notes / 知識庫</h2>
+
+        <div class="log-item">
+            <div class="log-content">
+                <div class="log-title">Python基礎與邏輯優化筆記</div>
+                <p class="log-desc">學習如何優化程式邏輯，為未來的專案或學校報告打下乾淨的程式底子。</p>
+            </div>
+            <div class="log-date">Running</div>
         </div>
     </section>
+
+    <footer>
+        <p>© 2026 Yunci. Built with GitHub Pages.</p>
+    </footer>
 
 </body>
 </html>
