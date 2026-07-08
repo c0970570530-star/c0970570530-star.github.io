@@ -232,648 +232,440 @@
                 <div class="log-item" style="border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 20px;">
                     <div class="log-content">
                         <h3 class="log-title">克拉島的音樂隨筆 ─ 歷年專輯與寶藏歌曲 💎</h3>
-                        <p class="log-desc">資料已無縫對應上傳的 Excel 檔案。點擊各大分類下的專輯，即可展開瀏覽曲目清單。</p>
+                        <p class="log-desc">點擊大分類選單展開專輯，再次點擊專輯即可瀏覽完整曲目清單。</p>
                     </div>
                 </div>
 
-                <!-- === 正規專輯 大分類 === -->
-                <div class="course-group-title" style="font-size: 1.05rem; font-weight: 700; color: #3182ce; margin-top: 24px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #edf2f7;">🗂️ 正規專輯</div>
-                <div class="accordion-item" id="alb-正規專輯-0" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-正規專輯-0')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《LOVE&LETTER》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2016.04.25)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                <!-- ==================== LAYER 1: 正規專輯 ==================== -->
+                <div class="category-fold-group" style="margin-bottom: 16px;">
+                    <div class="category-fold-header" onclick="toggleMusicCategory('cat-regular', 'arrow-cat-reg')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background-color: #edf2f7; border-radius: 8px; font-weight: 600; font-size: 0.95rem; color: #2d3748; cursor: pointer;">
+                        <span>🗂️ 正規專輯</span>
+                        <span id="arrow-cat-reg" style="font-size: 0.75rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
                     </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.엄지척 / Chuck</li>
-                            <li style="margin-bottom: 4px;">🎵 2.예쁘다 / Pretty U</li>
-                            <li style="margin-bottom: 4px;">🎵 3.이놈의 인기 / Still Lonely</li>
-                            <li style="margin-bottom: 4px;">🎵 4.유행가 / Hit Song</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Say Yes</li>
-                            <li style="margin-bottom: 4px;">🎵 6.떠내려가 / Drift Away</li>
-                            <li style="margin-bottom: 4px;">🎵 7.아낀다 / Adore U</li>
-                            <li style="margin-bottom: 4px;">🎵 8.만.се / Monday To Saturday</li>
-                            <li style="margin-bottom: 4px;">🎵 9.Shining Diamond</li>
-                            <li style="margin-bottom: 4px;">🎵 10.사랑쪽지 / Love</li>
-                        </ul>
+                    
+                    <!-- 裡面的專輯清單（預設隱藏） -->
+                    <div id="cat-regular" style="display: none; padding: 10px 4px 0 4px;">
+                        
+                        <div class="accordion-item" id="alb-reg-0" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-reg-0')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《LOVE&LETTER》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2016.04.25)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.엄지척 / Chuck</li><li>🎵 2.예쁘다 / Pretty U</li><li>🎵 3.이놈의 인기 / Still Lonely</li><li>🎵 4.유행가 / Hit Song</li><li>🎵 5.Say Yes</li><li>🎵 6.떠내려가 / Drift Away</li><li>🎵 7.아낀다 / Adore U</li><li>🎵 8.만.세 / Monday To Saturday</li><li>🎵 9.Shining Diamond</li><li>🎵 10.사랑쪽지 / Love</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="alb-reg-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-reg-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《LOVE&LETTER》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2016.07.04)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.NO F.U.N</li><li>🎵 2.아주 NICE / VERY NICE</li><li>🎵 3.힐링 / Healing</li><li>🎵 4.SIMPLE</li><li>🎵 5.끝一 안보여 / Space</li><li>🎵 6.엄지척 / Chuck</li><li>🎵 7.예쁘다 / Pretty U</li><li>🎵 8.이놈의 인기 / Still Lonely</li><li>🎵 9.유행가 / Hit Song</li><li>🎵 10.Say Yes</li><li>🎵 11.떠내려가 / Drift Away</li><li>🎵 12.아낀다 / Adore U</li><li>🎵 13.만.세 / Monday To Saturday</li><li>🎵 14.Shining Diamond</li><li>🎵 15.사랑쪽지 / Love Letter</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="alb-reg-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-reg-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《TEEN, AGE》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2017.11.06)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.Intro. 新世界 / Intro. New World</li><li>🎵 2.CHANGE UP</li><li>🎵 3.모자를 눌러 쓰고 / Without You</li><li>🎵 4.박수 / Clap</li><li>🎵 5.날 쏘고 가拉 / Bring It</li><li>🎵 6.13월의 춤 / Lilili Yabbay</li><li>🎵 7.TRAUMA</li><li>🎵 8.바람개비 / Pinwheel</li><li>🎵 9.Flower</li><li>🎵 10.Rocket</li><li>🎵 11.Hello</li><li>🎵 12.캠프파이어 / Campfire</li><li>🎵 13.Outro. 未完 / Outro. Incompletion</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="alb-reg-3" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-reg-3')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《An Ode》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2019.09.16)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.HIT</li><li>🎵 2.거짓말을 해 / Lie Again</li><li>🎵 3.독 : Fear / Fear</li><li>🎵 4.Let me hear you say</li><li>🎵 5.247</li><li>🎵 6.Second Life</li><li>🎵 7.Network Love</li><li>🎵 8.Back it up</li><li>🎵 9.Lucky</li><li>🎵 10.Snap Shoot</li><li>🎵 11.Happy Ending</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="alb-reg-4" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-reg-4')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《Face the Sun》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2022.05.27)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.Darl+ing</li><li>🎵 2.HOT</li><li>🎵 3.DON QUIXOTE</li><li>🎵 4.March</li><li>🎵 5.Domino</li><li>🎵 6.Shadow</li><li>🎵 7.노래해 / 'bout you</li><li>🎵 8.IF you leave me</li><li>🎵 9.Ash</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="alb-reg-5" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-reg-5')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《SECTOR 17》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2022.07.18)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.돌고 돌아 / Circles</li><li>🎵 2._WORLD</li><li>🎵 3.Fallin' Flower</li><li>🎵 4.CHEERS</li><li>🎵 5.Darl+ing</li><li>🎵 6.HOT</li><li>🎵 7.DON QUIXOTE</li><li>🎵 8.March</li><li>🎵 9.Domino</li><li>🎵 10.Shadow</li><li>🎵 11.노래해 / 'bout you</li><li>🎵 12.IF you leave me</li><li>🎵 13.Ash</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="alb-reg-6" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-reg-6')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《HAPPY BURSTDAY》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2025.05.26)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.HBD</li><li>🎵 2.THUNDER</li><li>🎵 3.Bad Influence</li><li>🎵 4.Skyfall</li><li>🎵 5.Fortunate Change</li><li>🎵 6.99.9%</li><li>🎵 7.Raindrops</li><li>🎵 8.Damage</li><li>🎵 9.Shake It Off</li><li>🎵 10.Happy Virus</li><li>🎵 11.운명 / Destiny</li><li>🎵 12.Shining Star</li><li>🎵 13.쌍둥이자리 (Gemini)</li><li>🎵 14.Trigger</li><li>🎵 15.우연 / Coincidence</li><li>🎵 16.Jungle</li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="accordion-item" id="alb-正規專輯-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-正規專輯-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《LOVE&LETTER》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2016.07.04)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                <!-- ==================== LAYER 2: 特別專輯 ==================== -->
+                <div class="category-fold-group" style="margin-bottom: 16px;">
+                    <div class="category-fold-header" onclick="toggleMusicCategory('cat-special', 'arrow-cat-spec')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background-color: #edf2f7; border-radius: 8px; font-weight: 600; font-size: 0.95rem; color: #2d3748; cursor: pointer;">
+                        <span>🗂️ 特別專輯</span>
+                        <span id="arrow-cat-spec" style="font-size: 0.75rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
                     </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.NO F.U.N</li>
-                            <li style="margin-bottom: 4px;">🎵 2.아주 NICE / VERY NICE</li>
-                            <li style="margin-bottom: 4px;">🎵 3.힐링 / Healing</li>
-                            <li style="margin-bottom: 4px;">🎵 4.SIMPLE</li>
-                            <li style="margin-bottom: 4px;">🎵 5.끝一 안보여 / Space</li>
-                            <li style="margin-bottom: 4px;">🎵 6.엄지척 / Chuck</li>
-                            <li style="margin-bottom: 4px;">🎵 7.예쁘다 / Pretty U</li>
-                            <li style="margin-bottom: 4px;">🎵 8.이놈의 인기 / Still Lonely</li>
-                            <li style="margin-bottom: 4px;">🎵 9.유행가 / Hit Song</li>
-                            <li style="margin-bottom: 4px;">🎵 10.Say Yes</li>
-                            <li style="margin-bottom: 4px;">🎵 11.떠내려가 / Drift Away</li>
-                            <li style="margin-bottom: 4px;">🎵 12.아낀다 / Adore U</li>
-                            <li style="margin-bottom: 4px;">🎵 13.만.се / Monday To Saturday</li>
-                            <li style="margin-bottom: 4px;">🎵 14.Shining Diamond</li>
-                            <li style="margin-bottom: 4px;">🎵 15.사랑쪽지 / Love Letter</li>
-                        </ul>
+                    
+                    <div id="cat-special" style="display: none; padding: 10px 4px 0 4px;">
+                        <div class="accordion-item" id="alb-spec-0" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-spec-0')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《DIRECTOR'S CUT》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2018.02.05)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.Thinkin' about you</li><li>🎵 2.고맙다 / THANKS</li><li>🎵 3.지금 널 찾아가고 있어 / Run to you</li><li>🎵 4.Falling For U</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="alb-spec-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-spec-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《; [Semicolon]》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2020.10.19)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.HOME;RUN</li><li>🎵 2.도레미 / Do Re Mi</li><li>🎵 3.HEY BUDDY</li><li>🎵 4.마음에 불을 지펴 / Light a Flame</li><li>🎵 5.AH! LOVE</li><li>🎵 6.겨우 / All My Love</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="accordion-item" id="alb-正規專輯-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-正規專輯-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《TEEN, AGE》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2017.11.06)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                <!-- ==================== LAYER 3: 精選專輯 ==================== -->
+                <div class="category-fold-group" style="margin-bottom: 16px;">
+                    <div class="category-fold-header" onclick="toggleMusicCategory('cat-best', 'arrow-cat-best')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background-color: #edf2f7; border-radius: 8px; font-weight: 600; font-size: 0.95rem; color: #2d3748; cursor: pointer;">
+                        <span>🗂️ 精選專輯</span>
+                        <span id="arrow-cat-best" style="font-size: 0.75rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
                     </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.Intro. 新世界 / Intro. New World</li>
-                            <li style="margin-bottom: 4px;">🎵 2.CHANGE UP</li>
-                            <li style="margin-bottom: 4px;">🎵 3.모자를 눌러 쓰고 / Without You</li>
-                            <li style="margin-bottom: 4px;">🎵 4.박수 / Clap</li>
-                            <li style="margin-bottom: 4px;">🎵 5.날 쏘고 가라 / Bring It</li>
-                            <li style="margin-bottom: 4px;">🎵 6.13월의 춤 / Lilili Yabbay</li>
-                            <li style="margin-bottom: 4px;">🎵 7.TRAUMA</li>
-                            <li style="margin-bottom: 4px;">🎵 8.바람개비 / Pinwheel</li>
-                            <li style="margin-bottom: 4px;">🎵 9.Flower</li>
-                            <li style="margin-bottom: 4px;">🎵 10.Rocket</li>
-                            <li style="margin-bottom: 4px;">🎵 11.Hello</li>
-                            <li style="margin-bottom: 4px;">🎵 12.캠프파이어 / Campfire</li>
-                            <li style="margin-bottom: 4px;">🎵 13.Outro. 未完 / Outro. Incompletion</li>
-                        </ul>
+                    
+                    <div id="cat-best" style="display: none; padding: 10px 4px 0 4px;">
+                        <div class="accordion-item" id="alb-best-0" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-best-0')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《17 Hits》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2016.10.21)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.아주 Nice / VERY NICE</li><li>🎵 2.만세 / MANSAE</li><li>🎵 3.예쁘다 / Pretty U</li><li>🎵 4.아낀다 / Adore U</li><li>🎵 5.사랑쪽地 / Love Letter</li><li>🎵 6.SIMPLE</li><li>🎵 7.Shining Diamond</li><li>🎵 8.NO F.U.N</li><li>🎵 9.힐링 / Healing</li><li>🎵 10.끝이 안보여 / Space</li><li>🎵 11.표情管理 / Fronting</li><li>🎵 12.떠내려가 / Drift Away</li><li>🎵 13.엄지척 / Chuck</li><li>🎵 14.ROCK</li><li>🎵 15.Say Yes</li><li>🎵 16.아낀다 / Adore U</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="alb-best-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-best-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《17 IS RIGHT HERE》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2024.04.29)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li style="font-weight:bold; color:#3182ce;">💿 CD 1</li>
+                                    <li>🎵 1.MAESTRO</li><li>🎵 2.LALALI</li><li>🎵 3.Spell</li><li>🎵 4.청춘찬가 / Cheers to youth</li><li>🎵 5.CALL CALL CALL!</li><li>🎵 6.Happy Ending</li><li>🎵 7.Fallin' Flower</li><li>🎵 8.24H</li><li>🎵 9.Not Alone</li><li>🎵 10.Power of Love</li><li>🎵 11.DREAM</li><li>🎵 12.Ima -Even if the world ends tomorrow</li>
+                                    <li style="font-weight:bold; color:#3182ce; margin-top:6px;">💿 CD 2</li>
+                                    <li>🎵 1.아낀다 / Adore U</li><li>🎵 2.만세 / MANSAE</li><li>🎵 3.예쁘다 / Pretty U</li><li>🎵 4.아주 NICE / VERY NICE</li><li>🎵 5.붐붐 / BOOMBOOM</li><li>🎵 6.울고 싶지 않아 / Don't Wanna Cry</li><li>🎵 7.박수 / CLAP</li><li>🎵 8.고맙다 / THANKS</li><li>🎵 9.어쩌나 / Oh My!</li><li>🎵 10.Home</li><li>🎵 11.독 : Fear / Fear</li><li>🎵 12.Left & Right</li><li>🎵 13.HOME;RUN</li><li>🎵 14.Ready to love</li><li>🎵 15.Rock with you</li><li>🎵 16.HOT</li><li>🎵 17._WORLD</li><li>🎵 18.F*ck My Life</li><li>🎵 19.손오공 / Super</li><li>🎵 20.음악의 신 / God of Music</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="alb-best-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-best-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《ALWAYS YOURS》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2023.08.23)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li style="font-weight:bold; color:#3182ce;">💿 CD 1</li>
+                                    <li>🎵 1.今 -明日 世界が終わっても- /Ima -Even if the world ends tomorrow-</li><li>🎵 2.Sara Sara</li><li>🎵 3.CALL CALL CALL!</li><li>🎵 4.Happy Ending</li><li>🎵 5.舞い落ちる花びら / Fallin' Flower</li><li>🎵 6.24H</li><li>🎵 7.ひとりじゃない / Not Alone</li><li>🎵 8.あいのちから / Power of Love</li><li>🎵 9.DREAM</li>
+                                    <li style="font-weight:bold; color:#3182ce; margin-top:6px;">💿 CD 2</li>
+                                    <li>🎵 1.HIGHLIGHT</li><li>🎵 2.Lean On Me</li><li>🎵 3.20</li><li>🎵 4.LOVE LETTER</li><li>🎵 5.Oh My!</li><li>🎵 6.Healing</li><li>🎵 7.Good to Me</li><li>🎵 8.Smile Flower</li><li>🎵 9.Pinwheel</li><li>🎵 10.247</li><li>🎵 11.Chilli</li><li>🎵 12.Together</li><li>🎵 13.Run to You</li><li>🎵 14.HOME;RUN</li><li>🎵 15.Home</li><li>🎵 16.Snap Shoot</li><li>🎵 17.Rock with you</li><li>🎵 18.All My Love</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="accordion-item" id="alb-正規專輯-3" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-正規專輯-3')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《An Ode》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2019.09.16)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                <!-- ==================== LAYER 4: 迷你專輯 ==================== -->
+                <div class="category-fold-group" style="margin-bottom: 16px;">
+                    <div class="category-fold-header" onclick="toggleMusicCategory('cat-mini', 'arrow-cat-mini')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background-color: #edf2f7; border-radius: 8px; font-weight: 600; font-size: 0.95rem; color: #2d3748; cursor: pointer;">
+                        <span>🗂️ 迷你專輯</span>
+                        <span id="arrow-cat-mini" style="font-size: 0.75rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
                     </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.HIT</li>
-                            <li style="margin-bottom: 4px;">🎵 2.거짓말을 해 / Lie Again</li>
-                            <li style="margin-bottom: 4px;">🎵 3.독 : Fear / Fear</li>
-                            <li style="margin-bottom: 4px;">🎵 4.Let me hear you say</li>
-                            <li style="margin-bottom: 4px;">🎵 5.247</li>
-                            <li style="margin-bottom: 4px;">🎵 6.Second Life</li>
-                            <li style="margin-bottom: 4px;">🎵 7.Network Love</li>
-                            <li style="margin-bottom: 4px;">🎵 8.Back it up</li>
-                            <li style="margin-bottom: 4px;">🎵 9.Lucky</li>
-                            <li style="margin-bottom: 4px;">🎵 10.Snap Shoot</li>
-                            <li style="margin-bottom: 4px;">🎵 11.Happy Ending</li>
-                        </ul>
-                    </div>
-                </div>
+                    
+                    <div id="cat-mini" style="display: none; padding: 10px 4px 0 4px;">
+                        <div class="accordion-item" id="alb-mini-0" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-0')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《17 CARAT》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2015.05.29)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.Shining Diamond</li><li>🎵 2.아낀다 / Adore U</li><li>🎵 3.Ah Yeah</li><li>🎵 4.Jam Jam</li><li>🎵 5.20</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-正規專輯-4" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-正規專輯-4')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《Face the Sun》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2022.05.27)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.Darl+ing</li>
-                            <li style="margin-bottom: 4px;">🎵 2.HOT</li>
-                            <li style="margin-bottom: 4px;">🎵 3.DON QUIXOTE</li>
-                            <li style="margin-bottom: 4px;">🎵 4.March</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Domino</li>
-                            <li style="margin-bottom: 4px;">🎵 6.Shadow</li>
-                            <li style="margin-bottom: 4px;">🎵 7.노래해 / 'bout you</li>
-                            <li style="margin-bottom: 4px;">🎵 8.IF you leave me</li>
-                            <li style="margin-bottom: 4px;">🎵 9.Ash</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; pointer; background-color: #fafafa; cursor: pointer;">
+                                <span>💿 《BOYS BE》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2015.09.10)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.表情管理 / Fronting</li><li>🎵 2.만세 / MANSAE</li><li>🎵 3.어른이 되면 / When I Grow Up</li><li>🎵 4.OMG</li><li>🎵 5.ROCK</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-正規專輯-5" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-正規專輯-5')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《SECTOR 17》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2022.07.18)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.돌고 돌아 / Circles</li>
-                            <li style="margin-bottom: 4px;">🎵 2._WORLD</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Fallin' Flower</li>
-                            <li style="margin-bottom: 4px;">🎵 4.CHEERS</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Darl+ing</li>
-                            <li style="margin-bottom: 4px;">🎵 6.HOT</li>
-                            <li style="margin-bottom: 4px;">🎵 7.DON QUIXOTE</li>
-                            <li style="margin-bottom: 4px;">🎵 8.March</li>
-                            <li style="margin-bottom: 4px;">🎵 9.Domino</li>
-                            <li style="margin-bottom: 4px;">🎵 10.Shadow</li>
-                            <li style="margin-bottom: 4px;">🎵 11.노래해 / 'bout you</li>
-                            <li style="margin-bottom: 4px;">🎵 12.IF you leave me</li>
-                            <li style="margin-bottom: 4px;">🎵 13.Ash</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《Going Seventeen》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2016.12.05)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.BEAUTIFUL</li><li>🎵 2.붐붐 / BOOMBOOM</li><li>🎵 3.HIGHLIGHT</li><li>🎵 4.기대 / Lean On Me</li><li>🎵 5.빠른 걸음 / Fast Pace</li><li>🎵 6.몰래 듣지 마요 / Don't listen in secret</li><li>🎵 7.글쎄 / I Don't Know</li><li>🎵 8.웃음꽃 / Smile Flower</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-正規專輯-6" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-正規專輯-6')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《HAPPY BURSTDAY》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2025.05.26)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.HBD</li>
-                            <li style="margin-bottom: 4px;">🎵 2.THUNDER</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Bad Influence</li>
-                            <li style="margin-bottom: 4px;">🎵 4.Skyfall</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Fortunate Change</li>
-                            <li style="margin-bottom: 4px;">🎵 6.99.9%</li>
-                            <li style="margin-bottom: 4px;">🎵 7.Raindrops</li>
-                            <li style="margin-bottom: 4px;">🎵 8.Damage</li>
-                            <li style="margin-bottom: 4px;">🎵 9.Shake It Off</li>
-                            <li style="margin-bottom: 4px;">🎵 10.Happy Virus</li>
-                            <li style="margin-bottom: 4px;">🎵 11.운명 / Destiny</li>
-                            <li style="margin-bottom: 4px;">🎵 12.Shining Star</li>
-                            <li style="margin-bottom: 4px;">🎵 13.쌍둥이자리 (Gemini)</li>
-                            <li style="margin-bottom: 4px;">🎵 14.Trigger</li>
-                            <li style="margin-bottom: 4px;">🎵 15.우연 / Coincidence</li>
-                            <li style="margin-bottom: 4px;">🎵 16.Jungle</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-3" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-3')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《Al1》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2017.05.23)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.울고 싶지 않아 / Don't Wanna Cry</li><li>🎵 2.입버릇 / Habit</li><li>🎵 3.IF I</li><li>🎵 4.Swimming Fool</li><li>🎵 5.MY I</li><li>🎵 6.Crazy in Love</li><li>🎵 7.WHO</li><li>🎵 8.Check-In</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <!-- === 特別專輯 大分類 === -->
-                <div class="course-group-title" style="font-size: 1.05rem; font-weight: 700; color: #3182ce; margin-top: 24px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #edf2f7;">🗂️ 特別專輯</div>
-                <div class="accordion-item" id="alb-特別專輯-0" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-特別專輯-0')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《DIRECTOR'S CUT》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2018.02.05)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.Thinkin' about you</li>
-                            <li style="margin-bottom: 4px;">🎵 2.고맙다 / THANKS</li>
-                            <li style="margin-bottom: 4px;">🎵 3.지금 널 찾아가고 있어 / Run to you</li>
-                            <li style="margin-bottom: 4px;">🎵 4.Falling For U</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-4" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-4')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《YOU MAKE MY DAY》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2018.07.16)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.어쩌나 / Oh My!</li><li>🎵 2.Holiday</li><li>🎵 3.나에게로 와 / Come To Me</li><li>🎵 4.What's Good</li><li>🎵 5.MOONWALKER</li><li>🎵 6.우리의 새벽은 낮보다 뜨겁다 / Our Dawn Is Hotter Than Day</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-特別專輯-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-特別專輯-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《; [Semicolon]》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2020.10.19)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.HOME;RUN</li>
-                            <li style="margin-bottom: 4px;">🎵 2.도레미 / Do Re Mi</li>
-                            <li style="margin-bottom: 4px;">🎵 3.HEY BUDDY</li>
-                            <li style="margin-bottom: 4px;">🎵 4.마음에 불을 지펴 / Light a Flame</li>
-                            <li style="margin-bottom: 4px;">🎵 5.AH! LOVE</li>
-                            <li style="margin-bottom: 4px;">🎵 6.겨우 / All My Love</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-5" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-5')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《YOU MADE MY DAWN》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2019.01.21)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.Good To Me</li><li>🎵 2.Home</li><li>🎵 3.포옹 / Hug</li><li>🎵 4.칠리 / Chilli</li><li>🎵 5.Shhh</li><li>🎵 6.숨이 차 / Getting Closer</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <!-- === 精選專輯 大分類 === -->
-                <div class="course-group-title" style="font-size: 1.05rem; font-weight: 700; color: #3182ce; margin-top: 24px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #edf2f7;">🗂️ 精選專輯</div>
-                <div class="accordion-item" id="alb-精選專輯-0" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-精選專輯-0')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《17 Hits》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2016.10.21)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.아주 Nice / VERY NICE</li>
-                            <li style="margin-bottom: 4px;">🎵 2.만세 / MANSAE</li>
-                            <li style="margin-bottom: 4px;">🎵 3.예쁘다 / Pretty U</li>
-                            <li style="margin-bottom: 4px;">🎵 4.아낀다 / Adore U</li>
-                            <li style="margin-bottom: 4px;">🎵 5.사랑쪽地 / Love Letter</li>
-                            <li style="margin-bottom: 4px;">🎵 6.SIMPLE</li>
-                            <li style="margin-bottom: 4px;">🎵 7.Shining Diamond</li>
-                            <li style="margin-bottom: 4px;">🎵 8.NO F.U.N</li>
-                            <li style="margin-bottom: 4px;">🎵 9.힐링 / Healing</li>
-                            <li style="margin-bottom: 4px;">🎵 10.끝이 안보여 / Space</li>
-                            <li style="margin-bottom: 4px;">🎵 11.표정관리 / Fronting</li>
-                            <li style="margin-bottom: 4px;">🎵 12.떠내려가 / Drift Away</li>
-                            <li style="margin-bottom: 4px;">🎵 13.엄지척 / Chuck</li>
-                            <li style="margin-bottom: 4px;">🎵 14.ROCK</li>
-                            <li style="margin-bottom: 4px;">🎵 15.Say Yes</li>
-                            <li style="margin-bottom: 4px;">🎵 16.아낀다 / Adore U</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-6" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-6')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《Heng:garæ》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2020.06.22)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.Fearless</li><li>🎵 2.Left & Right</li><li>🎵 3.좋겠다 / I Wish</li><li>🎵 4.My My</li><li>🎵 5.어른 아이 / Kidult</li><li>🎵 6.같이 가요 / Together</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-精選專輯-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-精選專輯-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《17 IS RIGHT HERE》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2024.04.29)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px; font-weight: bold; color: #3182ce;">💿 CD 1</li>
-                            <li style="margin-bottom: 4px;">🎵 1.MAESTRO</li>
-                            <li style="margin-bottom: 4px;">🎵 2.LALALI</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Spell</li>
-                            <li style="margin-bottom: 4px;">🎵 4.청춘찬가 / Cheers to youth</li>
-                            <li style="margin-bottom: 4px;">🎵 5.CALL CALL CALL!</li>
-                            <li style="margin-bottom: 4px;">🎵 6.Happy Ending</li>
-                            <li style="margin-bottom: 4px;">🎵 7.Fallin' Flower</li>
-                            <li style="margin-bottom: 4px;">🎵 8.24H</li>
-                            <li style="margin-bottom: 4px;">🎵 9.Not Alone</li>
-                            <li style="margin-bottom: 4px;">🎵 10.Power of Love</li>
-                            <li style="margin-bottom: 4px;">🎵 11.DREAM</li>
-                            <li style="margin-bottom: 4px;">🎵 12.Ima -Even if the world ends tomorrow</li>
-                            <li style="margin-bottom: 4px; font-weight: bold; color: #3182ce; margin-top: 8px;">💿 CD 2</li>
-                            <li style="margin-bottom: 4px;">🎵 1.아낀다 / Adore U</li>
-                            <li style="margin-bottom: 4px;">🎵 2.만세 / MANSAE</li>
-                            <li style="margin-bottom: 4px;">🎵 3.예쁘다 / Pretty U</li>
-                            <li style="margin-bottom: 4px;">🎵 4.아주 NICE / VERY NICE</li>
-                            <li style="margin-bottom: 4px;">🎵 5.붐붐 / BOOMBOOM</li>
-                            <li style="margin-bottom: 4px;">🎵 6.울고 싶지 않아 / Don't Wanna Cry</li>
-                            <li style="margin-bottom: 4px;">🎵 7.박수 / CLAP</li>
-                            <li style="margin-bottom: 4px;">🎵 8.고맙다 / THANKS</li>
-                            <li style="margin-bottom: 4px;">🎵 9.어쩌나 / Oh My!</li>
-                            <li style="margin-bottom: 4px;">🎵 10.Home</li>
-                            <li style="margin-bottom: 4px;">🎵 11.독 : Fear / Fear</li>
-                            <li style="margin-bottom: 4px;">🎵 12.Left & Right</li>
-                            <li style="margin-bottom: 4px;">🎵 13.HOME;RUN</li>
-                            <li style="margin-bottom: 4px;">🎵 14.Ready to love</li>
-                            <li style="margin-bottom: 4px;">🎵 15.Rock with you</li>
-                            <li style="margin-bottom: 4px;">🎵 16.HOT</li>
-                            <li style="margin-bottom: 4px;">🎵 17._WORLD</li>
-                            <li style="margin-bottom: 4px;">🎵 18.F*ck My Life</li>
-                            <li style="margin-bottom: 4px;">🎵 19.손오공 / Super</li>
-                            <li style="margin-bottom: 4px;">🎵 20.음악의 신 / God of Music</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-7" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-7')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《Your Choice》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2021.06.18)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.Heaven's Cloud</li><li>🎵 2.Ready to love</li><li>🎵 3.Anyone</li><li>🎵 4.GAM3 BO1</li><li>🎵 5.Wave</li><li>🎵 6.같은 꿈, 같은 맘, 같은 밤 / Same dream, same mind, same night</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-精選專輯-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-精選專輯-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《ALWAYS YOURS》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2023.08.23)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px; font-weight: bold; color: #3182ce;">💿 CD 1</li>
-                            <li style="margin-bottom: 4px;">🎵 1.今 -明日 世界が終わっても- /Ima -Even if the world ends tomorrow-</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Sara Sara</li>
-                            <li style="margin-bottom: 4px;">🎵 3.CALL CALL CALL!</li>
-                            <li style="margin-bottom: 4px;">🎵 4.Happy Ending</li>
-                            <li style="margin-bottom: 4px;">🎵 5.舞い落ちる花びら / Fallin' Flower</li>
-                            <li style="margin-bottom: 4px;">🎵 6.24H</li>
-                            <li style="margin-bottom: 4px;">🎵 7.ひとりじゃない / Not Alone</li>
-                            <li style="margin-bottom: 4px;">🎵 8.あいのちから / Power of Love</li>
-                            <li style="margin-bottom: 4px;">🎵 9.DREAM</li>
-                            <li style="margin-bottom: 4px; font-weight: bold; color: #3182ce; margin-top: 8px;">💿 CD 2</li>
-                            <li style="margin-bottom: 4px;">🎵 1.HIGHLIGHT</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Lean On Me</li>
-                            <li style="margin-bottom: 4px;">🎵 3.20</li>
-                            <li style="margin-bottom: 4px;">🎵 4.LOVE LETTER</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Oh My!</li>
-                            <li style="margin-bottom: 4px;">🎵 6.Healing</li>
-                            <li style="margin-bottom: 4px;">🎵 7.Good to Me</li>
-                            <li style="margin-bottom: 4px;">🎵 8.Smile Flower</li>
-                            <li style="margin-bottom: 4px;">🎵 9.Pinwheel</li>
-                            <li style="margin-bottom: 4px;">🎵 10.247</li>
-                            <li style="margin-bottom: 4px;">🎵 11.Chilli</li>
-                            <li style="margin-bottom: 4px;">🎵 12.Together</li>
-                            <li style="margin-bottom: 4px;">🎵 13.Run to You</li>
-                            <li style="margin-bottom: 4px;">🎵 14.HOME;RUN</li>
-                            <li style="margin-bottom: 4px;">🎵 15.Home</li>
-                            <li style="margin-bottom: 4px;">🎵 16.Snap Shoot</li>
-                            <li style="margin-bottom: 4px;">🎵 17.Rock with you</li>
-                            <li style="margin-bottom: 4px;">🎵 18.All My Love</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-8" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-8')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《Attacca》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2021.10.22)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.소용돌이 / To you</li><li>🎵 2.Rock with you</li><li>🎵 3.Crush</li><li>🎵 4.PANG!</li><li>🎵 5.매日 그대라서 행복하다 / Imperfect love</li><li>🎵 6.그리워하는 것까지 / I can't run away</li><li>🎵 7.2 MINUS 1</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <!-- === 迷你專輯 大分類 === -->
-                <div class="course-group-title" style="font-size: 1.05rem; font-weight: 700; color: #3182ce; margin-top: 24px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #edf2f7;">🗂️ 迷你專輯</div>
-                <div class="accordion-item" id="alb-迷你專輯-0" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-0')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《17 CARAT》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2015.05.29)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.Shining Diamond</li>
-                            <li style="margin-bottom: 4px;">🎵 2.아낀다 / Adore U</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Ah Yeah</li>
-                            <li style="margin-bottom: 4px;">🎵 4.Jam Jam</li>
-                            <li style="margin-bottom: 4px;">🎵 5.20</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-9" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-9')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《FML》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2023.04.24)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.F*ck My Life</li><li>🎵 2.손오공 / Super</li><li>🎵 3.Fire</li><li>🎵 4.I Don't Understand But I Luv U</li><li>🎵 5.먼지 / Dust</li><li>🎵 6.April shower</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《BOYS BE》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2015.09.10)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.표정관리 / Fronting</li>
-                            <li style="margin-bottom: 4px;">🎵 2.만세 / MANSAE</li>
-                            <li style="margin-bottom: 4px;">🎵 3.어른이 되면 / When I Grow Up</li>
-                            <li style="margin-bottom: 4px;">🎵 4.OMG</li>
-                            <li style="margin-bottom: 4px;">🎵 5.ROCK</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-10" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-10')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《SEVENTEENTH HEAVEN》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2023.10.23)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.SOS</li><li>🎵 2.음악의 신 / God of Music</li><li>🎵 3.Diamond Days</li><li>🎵 4.Back 2 Back</li><li>🎵 5.Monster</li><li>🎵 6.하품 / Yawn</li><li>🎵 7.Headliner</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《Going Seventeen》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2016.12.05)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.BEAUTIFUL</li>
-                            <li style="margin-bottom: 4px;">🎵 2.붐붐 / BOOMBOOM</li>
-                            <li style="margin-bottom: 4px;">🎵 3.HIGHLIGHT</li>
-                            <li style="margin-bottom: 4px;">🎵 4.기대 / Lean On Me</li>
-                            <li style="margin-bottom: 4px;">🎵 5.빠른 걸음 / Fast Pace</li>
-                            <li style="margin-bottom: 4px;">🎵 6.몰래 듣지 마요 / Don't listen in secret</li>
-                            <li style="margin-bottom: 4px;">🎵 7.글쎄 / I Don't Know</li>
-                            <li style="margin-bottom: 4px;">🎵 8.웃음꽃 / Smile Flower</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-11" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-11')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《SPILL THE FEELS》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2024.10.14)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.Eyes on you</li><li>🎵 2.LOVE, MONEY, FAME</li><li>🎵 3.1 TO 13</li><li>🎵 4.사탕 / Candy</li><li>🎵 5.Rain</li><li>🎵 6.Water</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-3" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-3')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>...</span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.울고 싶지 않아 / Don't Wanna Cry</li>
-                            <li style="margin-bottom: 4px;">🎵 2.입버릇 / Habit</li>
-                            <li style="margin-bottom: 4px;">🎵 3.IF I</li>
-                            <li style="margin-bottom: 4px;">🎵 4.Swimming Fool</li>
-                            <li style="margin-bottom: 4px;">🎵 5.MY I</li>
-                            <li style="margin-bottom: 4px;">🎵 6.Crazy in Love</li>
-                            <li style="margin-bottom: 4px;">🎵 7.WHO</li>
-                            <li style="margin-bottom: 4px;">🎵 8.Check-In</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-12" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-12')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《We Make You》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2018.05.30)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.CALL CALL CALL!</li><li>🎵 2.HIGHLIGHT</li><li>🎵 3.Lean On Me</li><li>🎵 4.20</li><li>🎵 5.LOVE LETTER</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-4" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-4')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《YOU MAKE MY DAY》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2018.07.16)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.어쩌나 / Oh My!</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Holiday</li>
-                            <li style="margin-bottom: 4px;">🎵 3.나에게로 와 / Come To Me</li>
-                            <li style="margin-bottom: 4px;">🎵 4.What's Good</li>
-                            <li style="margin-bottom: 4px;">🎵 5.MOONWALKER</li>
-                            <li style="margin-bottom: 4px;">🎵 6.우리의 새벽은 낮보다 뜨겁다 / Our Dawn Is Hotter Than Day</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-13" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-13')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《24H》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2020.09.08)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.24H</li><li>🎵 2.Pinwheel</li><li>🎵 3.247</li><li>🎵 4.Chilli</li><li>🎵 5.Together</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-5" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-5')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《YOU MADE MY DAWN》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2019.01.21)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.Good To Me</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Home</li>
-                            <li style="margin-bottom: 4px;">🎵 3.포옹 / Hug</li>
-                            <li style="margin-bottom: 4px;">🎵 4.칠리 / Chilli</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Shhh</li>
-                            <li style="margin-bottom: 4px;">🎵 6.숨이 차 / Getting Closer</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-14" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-14')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《DREAM》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2022.12.08)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.DREAM</li><li>🎵 2.Rock with you</li><li>🎵 3.All My Love</li><li>🎵 4.Darl+ing</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-6" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-6')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《Heng:garæ》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2020.06.22)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.Fearless</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Left & Right</li>
-                            <li style="margin-bottom: 4px;">🎵 3.좋겠다 / I Wish</li>
-                            <li style="margin-bottom: 4px;">🎵 4.My My</li>
-                            <li style="margin-bottom: 4px;">🎵 5.어른 아이 / Kidult</li>
-                            <li style="margin-bottom: 4px;">🎵 6.같이 가요 / Together</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-15" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-15')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《Happy Ending》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2019.05.29)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.Happy Ending</li><li>🎵 2.Oh My!</li><li>🎵 3.Healing</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-7" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-7')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《Your Choice》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2021.06.18)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.Heaven's Cloud</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Ready to love</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Anyone</li>
-                            <li style="margin-bottom: 4px;">🎵 4.GAM3 BO1</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Wave</li>
-                            <li style="margin-bottom: 4px;">🎵 6.같은 꿈, 같은 맘, 같은 밤 / Same dream, same mind, same night</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-16" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-16')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《舞い落ちる花びら (Fallin' Flower)》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2020.03.31)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.舞い落ちる花びら / Fallin' Flower</li><li>🎵 2.Good to Me</li><li>🎵 3.Smile Flower</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-8" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-8')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《Attacca》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2021.10.22)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.소용돌이 / To you</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Rock with you</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Crush</li>
-                            <li style="margin-bottom: 4px;">🎵 4.PANG!</li>
-                            <li style="margin-bottom: 4px;">🎵 5.매일 그대라서 행복하다 / Imperfect love</li>
-                            <li style="margin-bottom: 4px;">🎵 6.그리워하는 것까지 / I can't run away</li>
-                            <li style="margin-bottom: 4px;">🎵 7.2 MINUS 1</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-17" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-17')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《ひとりじゃない (Not Alone)》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2021.04.15)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.ひとりじゃない / Not Alone</li><li>🎵 2.Run to You</li><li>🎵 3.HOME;RUN</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-9" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-9')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《FML》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2023.04.24)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.F*ck My Life</li>
-                            <li style="margin-bottom: 4px;">🎵 2.손오공 / Super</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Fire</li>
-                            <li style="margin-bottom: 4px;">🎵 4.I Don't Understand But I Luv U</li>
-                            <li style="margin-bottom: 4px;">🎵 5.먼지 / Dust</li>
-                            <li style="margin-bottom: 4px;">🎵 6.April shower</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="accordion-item" id="alb-mini-18" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-18')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《あいのちから (Power of Love)》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2021.11.29)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.あいのちから / Power of Love</li><li>🎵 2.Home</li><li>🎵 3.Snap Shoot</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="accordion-item" id="alb-迷你專輯-10" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-10')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《SEVENTEENTH HEAVEN》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2023.10.23)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.SOS</li>
-                            <li style="margin-bottom: 4px;">🎵 2.음악의 신 / God of Music</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Diamond Days</li>
-                            <li style="margin-bottom: 4px;">🎵 4.Back 2 Back</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Monster</li>
-                            <li style="margin-bottom: 4px;">🎵 6.하품 / Yawn</li>
-                            <li style="margin-bottom: 4px;">🎵 7.Headliner</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item" id="alb-迷你專輯-11" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-11')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《SPILL THE FEELS》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2024.10.14)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.Eyes on you</li>
-                            <li style="margin-bottom: 4px;">🎵 2.LOVE, MONEY, FAME</li>
-                            <li style="margin-bottom: 4px;">🎵 3.1 TO 13</li>
-                            <li style="margin-bottom: 4px;">🎵 4.사탕 / Candy</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Rain</li>
-                            <li style="margin-bottom: 4px;">🎵 6.Water</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item" id="alb-迷你專輯-12" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-12')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《We Make You》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2018.05.30)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.CALL CALL CALL!</li>
-                            <li style="margin-bottom: 4px;">🎵 2.HIGHLIGHT</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Lean On Me</li>
-                            <li style="margin-bottom: 4px;">🎵 4.20</li>
-                            <li style="margin-bottom: 4px;">🎵 5.LOVE LETTER</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item" id="alb-迷你專輯-13" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-13')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《24H》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2020.09.08)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.24H</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Pinwheel</li>
-                            <li style="margin-bottom: 4px;">🎵 3.247</li>
-                            <li style="margin-bottom: 4px;">🎵 4.Chilli</li>
-                            <li style="margin-bottom: 4px;">🎵 5.Together</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item" id="alb-迷你專輯-14" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-14')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《DREAM》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2022.12.08)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.DREAM</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Rock with you</li>
-                            <li style="margin-bottom: 4px;">🎵 3.All My Love</li>
-                            <li style="margin-bottom: 4px;">🎵 4.Darl+ing</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item" id="alb-迷你專輯-15" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-15')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《Happy Ending》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2019.05.29)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.Happy Ending</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Oh My!</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Healing</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item" id="alb-迷你專輯-16" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-16')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《舞い落ちる花びら (Fallin' Flower)》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2020.03.31)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.舞い落ちる花びら / Fallin' Flower</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Good to Me</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Smile Flower</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item" id="alb-迷你專輯-17" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-17')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《ひとりじゃない (Not Alone)》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2021.04.15)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.ひとりじゃない / Not Alone</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Run to You</li>
-                            <li style="margin-bottom: 4px;">🎵 3.HOME;RUN</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item" id="alb-迷你專輯-18" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-18')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《あいのちから (Power of Love)》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2021.11.29)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.あいのちから / Power of Love</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Home</li>
-                            <li style="margin-bottom: 4px;">🎵 3.Snap Shoot</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="accordion-item" id="alb-迷你專輯-19" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
-                    <div class="accordion-header" onclick="toggleAccordion('alb-迷你專輯-19')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
-                        <span>💿 《消費期限 (Shohikigen)》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2024.11.27)</span></span>
-                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
-                    </div>
-                    <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 250px; overflow-y: auto;">
-                        <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
-                            <li style="margin-bottom: 4px;">🎵 1.消費期限 / Shohikigen</li>
-                            <li style="margin-bottom: 4px;">🎵 2.Circles</li>
-                            <li style="margin-bottom: 4px;">🎵 3.MAESTRO</li>
-                        </ul>
+                        <div class="accordion-item" id="alb-mini-19" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                            <div class="accordion-header" onclick="toggleAccordion('alb-mini-19')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                                <span>💿 《消費期限 (Shohikigen)》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2024.11.27)</span></span>
+                                <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                            </div>
+                            <div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;">
+                                <ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);">
+                                    <li>🎵 1.消費期限 / Shohikigen</li><li>🎵 2.Circles</li><li>🎵 3.MAESTRO</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
