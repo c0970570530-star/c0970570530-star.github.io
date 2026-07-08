@@ -479,6 +479,21 @@
             document.getElementById('tab-star-root').classList.add('active');
         }
 
+        // 💥 補上：控制中欄「專輯項目」展開與收合的控制邏輯
+        function toggleAccordion(albumId) {
+            const albumBox = document.getElementById(albumId);
+            const content = albumBox.querySelector('.accordion-content');
+            const arrow = albumBox.querySelector('.arrow');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                arrow.style.transform = 'rotate(90deg)'; // 展開時箭頭向下
+            } else {
+                content.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';  // 收合時箭頭恢復
+            }
+        }
+
         // 一鍵隱藏中欄所有內容
         function hideAllSections() {
             const sections = document.querySelectorAll('.content-center section');
