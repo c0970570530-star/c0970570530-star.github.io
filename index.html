@@ -392,13 +392,24 @@
 
             <section id="page-ntpc-gazette">
                 <h3 style="color: #3182ce; margin-top: 0;">📜 公報相關文件</h3>
-                <p>收錄並分類在新北市見習期間研究與參考的官方公報資料、政策規章與會議文獻。</p>
-                <p style="margin-bottom: 12px; font-size: 0.9rem; color: #718096;">下方視窗可直接上下捲動瀏覽見習公報文件（未來可將 PDF 命名為 ntpc_gazette.pdf 上傳至 GitHub 根目錄）：</p>
+                <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 20px;">
+                    收錄並分類在新北市見習期間研究與參考的官方公報資料、政策規章與會議文獻。請點擊下方按鈕進行下載：
+                </p>
                 
-                <!-- 內嵌 PDF 瀏覽器（預留檔名：ntpc_gazette.pdf） -->
-                <iframe src="ntpc_gazette.pdf" width="100%" height="500px" style="border: 1px solid #edf2f7; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                    您的瀏覽器不支援直接瀏覽 PDF，請 <a href="ntpc_gazette.pdf" target="_blank">點此開新分頁下載</a>。
-                </iframe>
+                <div class="download-list" style="display: flex; flex-direction: column; gap: 12px;">
+                    
+                    <div class="download-item" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border: 1px solid var(--border-color); border-radius: 8px; background-color: #fafafa; transition: background-color 0.2s;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.5rem;">📄</span>
+                            <div>
+                                <div style="font-weight: 500; color: var(--text-dark); font-size: 0.9rem;">新北市政府公報資料.pdf</div>
+                                <div style="font-size: 0.75rem; color: #a0aec0; margin-top: 2px;">PDF 文件 </div>
+                            </div>
+                        </div>
+                        <a href="ntpc_gazette.pdf" download="新北市政府公報資料.pdf" style="display: inline-block; padding: 6px 14px; background-color: #3182ce; color: white; border-radius: 6px; font-size: 0.85rem; text-decoration: none; font-weight: 500; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#2b6cb0'" onmouseout="this.style.backgroundColor='#3182ce'">⬇️ 下載檔案</a>
+                    </div>
+
+                    </div>
             </section>
 
             <section id="page-ntpc-notes">
