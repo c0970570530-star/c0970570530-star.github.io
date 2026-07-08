@@ -222,6 +222,16 @@
                         <a id="subtab-star-mini" onclick="switchStarPage('star-mini')" style="font-size: 0.85rem; padding: 6px 10px;">🎵 迷你專輯</a>
                     </div>
                 </div>
+
+                <div class="nested-nav-container" style="margin-top: 4px;">
+                    <a id="tab-ntpc-root" onclick="toggleLeftNtpcMenu()">🏛️ NTPC見習 <span id="left-ntpc-arrow" style="font-size: 0.7rem; float: right; margin-top: 3px; transition: transform 0.2s;">▶</span></a>
+                    <!-- NTPC見習子選單 -->
+                    <div id="left-ntpc-list" class="submenu-list" style="display: none;">
+                        <a id="subtab-ntpc-gazette" onclick="switchNtpcPage('ntpc-gazette')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📜 公報相關文件</a>
+                        <a id="subtab-ntpc-notes" onclick="switchNtpcPage('ntpc-notes')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">✍️ 見習日誌與反思</a>
+                    </div>
+                </div>
+                
             </nav>
         </aside>
 
@@ -380,6 +390,23 @@
                 </iframe>
             </section>
 
+            <section id="page-ntpc-gazette">
+                <h3 style="color: #3182ce; margin-top: 0;">📜 公報相關文件</h3>
+                <p>收錄並分類在新北市見習期間研究與參考的官方公報資料、政策規章與會議文獻。</p>
+                <p style="margin-bottom: 12px; font-size: 0.9rem; color: #718096;">下方視窗可直接上下捲動瀏覽見習公報文件（未來可將 PDF 命名為 ntpc_gazette.pdf 上傳至 GitHub 根目錄）：</p>
+                
+                <!-- 內嵌 PDF 瀏覽器（預留檔名：ntpc_gazette.pdf） -->
+                <iframe src="ntpc_gazette.pdf" width="100%" height="500px" style="border: 1px solid #edf2f7; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                    您的瀏覽器不支援直接瀏覽 PDF，請 <a href="ntpc_gazette.pdf" target="_blank">點此開新分頁下載</a>。
+                </iframe>
+            </section>
+
+            <section id="page-ntpc-notes">
+                <h3 style="color: #3182ce; margin-top: 0;">✍️ 見習日誌與反思</h3>
+                <p><strong>實務觀察與核心能力提煉</strong></p>
+                <p>這裡未來可以用來條列你在政府機關或企業見習時的每日紀錄、專案協調心得，以及如何將資管系學到的系統化思維落實在公共事務中。</p>
+            </section>
+
         </main>
 
         <aside class="sidebar-right">
@@ -492,6 +519,27 @@
                 content.style.display = 'none';
                 arrow.style.transform = 'rotate(0deg)';  // 收合時箭頭恢復
             }
+        }
+        
+        function toggleLeftNtpcMenu() {
+            const submenu = document.getElementById('left-ntpc-list');
+            const arrow = document.getElementById('left-ntpc-arrow');
+            if (submenu.style.display === 'none') {
+                submenu.style.display = 'block';
+                arrow.style.transform = 'rotate(90deg)';
+            } else {
+                submenu.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // 💥 補上：左欄點擊「NTPC見習」下的科目時換中欄
+        function switchNtpcPage(itemId) {
+            hideAllSections();
+            clearAllActiveTabs();
+            document.getElementById('page-' + itemId).classList.add('active');
+            document.getElementById('subtab-' + itemId).classList.add('active');
+            document.getElementById('tab-ntpc-root').classList.add('active');
         }
 
         // 一鍵隱藏中欄所有內容
