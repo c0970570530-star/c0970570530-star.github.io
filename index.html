@@ -221,17 +221,7 @@
                         <a id="subtab-star-best" onclick="switchStarPage('star-best')" style="font-size: 0.85rem; padding: 6px 10px;">🌟 精選專輯</a>
                         <a id="subtab-star-mini" onclick="switchStarPage('star-mini')" style="font-size: 0.85rem; padding: 6px 10px;">🎵 迷你專輯</a>
                     </div>
-                </div>
-
-                <div class="nested-nav-container" style="margin-top: 4px;">
-                    <a id="tab-ntpc-root" onclick="toggleLeftNtpcMenu()">🏛️ NTPC見習 <span id="left-ntpc-arrow" style="font-size: 0.7rem; float: right; margin-top: 3px; transition: transform 0.2s;">▶</span></a>
-                    <!-- NTPC見習子選單 -->
-                    <div id="left-ntpc-list" class="submenu-list" style="display: none;">
-                        <a id="subtab-ntpc-gazette" onclick="switchNtpcPage('ntpc-gazette')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📜 公報相關文件</a>
-                        <a id="subtab-ntpc-notes" onclick="switchNtpcPage('ntpc-notes')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">✍️ 見習日誌與反思</a>
-                    </div>
-                </div>
-                
+                </div>                
             </nav>
         </aside>
 
@@ -390,71 +380,6 @@
                 </iframe>
             </section>
 
-            <section id="page-ntpc-gazette">
-                <h3 style="color: #3182ce; margin-top: 0;">📜 公報相關文件</h3>
-                <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 20px;">
-                    收錄並分類在新北市見習期間研究與參考的官方公報資料、政策規章與會議文獻。請點擊下方按鈕進行下載：
-                </p>
-                
-                <div class="download-list" style="display: flex; flex-direction: column; gap: 12px;">
-                    
-                    <div class="download-item" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border: 1px solid var(--border-color); border-radius: 8px; background-color: #fafafa; transition: background-color 0.2s;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 1.5rem;">📄</span>
-                            <div>
-                                <div style="font-weight: 500; color: var(--text-dark); font-size: 0.9rem;">(府)秘文書12-表一-新北市政府公報目次表.doc</div>
-                                <div style="font-size: 0.75rem; color: #a0aec0; margin-top: 2px;">doc 文件 </div>
-                            </div>
-                        </div>
-                        <a href="(府)秘文書12-表一-新北市政府公報目次表.doc" download="(府)秘文書12-表一-新北市政府公報目次表.doc" style="display: inline-block; padding: 6px 14px; background-color: #3182ce; color: white; border-radius: 6px; font-size: 0.85rem; text-decoration: none; font-weight: 500; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#2b6cb0'" onmouseout="this.style.backgroundColor='#3182ce'">⬇️ 下載檔案</a>
-
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 1.5rem;">📄</span>
-                            <div>
-                                <div style="font-weight: 500; color: var(--text-dark); font-size: 0.9rem;">(府)秘文書12-新北市政府公報編輯發行標準作業流程說明.doc</div>
-                                <div style="font-size: 0.75rem; color: #a0aec0; margin-top: 2px;">doc 文件 </div>
-                            </div>
-                        </div>
-                        <a href="(府)秘文書12-新北市政府公報編輯發行標準作業流程說明.doc" download="(府)秘文書12-新北市政府公報編輯發行標準作業流程說明.doc" style="display: inline-block; padding: 6px 14px; background-color: #3182ce; color: white; border-radius: 6px; font-size: 0.85rem; text-decoration: none; font-weight: 500; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#2b6cb0'" onmouseout="this.style.backgroundColor='#3182ce'">⬇️ 下載檔案</a>
-
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 1.5rem;">📄</span>
-                            <div>
-                                <div style="font-weight: 500; color: var(--text-dark); font-size: 0.9rem;">(府)秘文書12-新北市政府公報編輯發行標準作業流程圖.docx</div>
-                                <div style="font-size: 0.75rem; color: #a0aec0; margin-top: 2px;">docx 文件 </div>
-                            </div>
-                        </div>
-                        <a href="(府)秘文書12-新北市政府公報編輯發行標準作業流程圖.docx" download="(府)秘文書12-新北市政府公報編輯發行標準作業流程圖.docx" style="display: inline-block; padding: 6px 14px; background-color: #3182ce; color: white; border-radius: 6px; font-size: 0.85rem; text-decoration: none; font-weight: 500; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#2b6cb0'" onmouseout="this.style.backgroundColor='#3182ce'">⬇️ 下載檔案</a>
-
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 1.5rem;">📄</span>
-                            <div>
-                                <div style="font-weight: 500; color: var(--text-dark); font-size: 0.9rem;">(府)秘文書12-附件一-新北市政府公報編輯發行要點.docx</div>
-                                <div style="font-size: 0.75rem; color: #a0aec0; margin-top: 2px;">docx 文件 </div>
-                            </div>
-                        </div>
-                        <a href="(府)秘文書12-附件一-新北市政府公報編輯發行要點.docx" download="(府)秘文書12-附件一-新北市政府公報編輯發行要點.docx" style="display: inline-block; padding: 6px 14px; background-color: #3182ce; color: white; border-radius: 6px; font-size: 0.85rem; text-decoration: none; font-weight: 500; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#2b6cb0'" onmouseout="this.style.backgroundColor='#3182ce'">⬇️ 下載檔案</a>
-
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 1.5rem;">📄</span>
-                            <div>
-                                <div style="font-weight: 500; color: var(--text-dark); font-size: 0.9rem;">(府)秘文書12-附件二-參考範例-新北市政府公報公文編輯範例.doc</div>
-                                <div style="font-size: 0.75rem; color: #a0aec0; margin-top: 2px;">doc 文件 </div>
-                            </div>
-                        </div>
-                        <a href="(府)秘文書12-附件二-參考範例-新北市政府公報公文編輯範例.doc" download="(府)秘文書12-附件二-參考範例-新北市政府公報公文編輯範例.doc" style="display: inline-block; padding: 6px 14px; background-color: #3182ce; color: white; border-radius: 6px; font-size: 0.85rem; text-decoration: none; font-weight: 500; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#2b6cb0'" onmouseout="this.style.backgroundColor='#3182ce'">⬇️ 下載檔案</a>
-                        
-                    </div>
-
-                    </div>
-            </section>
-
-            <section id="page-ntpc-notes">
-                <h3 style="color: #3182ce; margin-top: 0;">✍️ 見習日誌與反思</h3>
-                <p><strong>實務觀察與核心能力提煉</strong></p>
-                <p>這裡未來可以用來條列你在政府機關或企業見習時的每日紀錄、專案協調心得，以及如何將資管系學到的系統化思維落實在公共事務中。</p>
-            </section>
-
         </main>
 
         <aside class="sidebar-right">
@@ -567,28 +492,7 @@
                 content.style.display = 'none';
                 arrow.style.transform = 'rotate(0deg)';  // 收合時箭頭恢復
             }
-        }
-        
-        function toggleLeftNtpcMenu() {
-            const submenu = document.getElementById('left-ntpc-list');
-            const arrow = document.getElementById('left-ntpc-arrow');
-            if (submenu.style.display === 'none') {
-                submenu.style.display = 'block';
-                arrow.style.transform = 'rotate(90deg)';
-            } else {
-                submenu.style.display = 'none';
-                arrow.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        // 💥 補上：左欄點擊「NTPC見習」下的科目時換中欄
-        function switchNtpcPage(itemId) {
-            hideAllSections();
-            clearAllActiveTabs();
-            document.getElementById('page-' + itemId).classList.add('active');
-            document.getElementById('subtab-' + itemId).classList.add('active');
-            document.getElementById('tab-ntpc-root').classList.add('active');
-        }
+        }       
 
         // 一鍵隱藏中欄所有內容
         function hideAllSections() {
