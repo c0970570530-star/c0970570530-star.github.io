@@ -221,7 +221,18 @@
                         <a id="subtab-star-best" onclick="switchStarPage('star-best')" style="font-size: 0.85rem; padding: 6px 10px;">🌟 精選專輯</a>
                         <a id="subtab-star-mini" onclick="switchStarPage('star-mini')" style="font-size: 0.85rem; padding: 6px 10px;">🎵 迷你專輯</a>
                     </div>
-                </div>                
+                </div>
+
+                <div class="nested-nav-container" style="margin-top: 4px;">
+                    <a id="tab-growth-root" onclick="toggleLeftGrowthMenu()">🌱 個人成長 <span id="left-growth-arrow" style="font-size: 0.7rem; float: right; margin-top: 3px; transition: transform 0.2s;">▶</span></a>
+                    <!-- 個人成長子選單 -->
+                    <div id="left-growth-list" class="submenu-list" style="display: none;">
+                        <a id="subtab-growth-grades" onclick="switchGrowthPage('growth-grades')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📈 在校成績</a>
+                        <a id="subtab-growth-certs" onclick="switchGrowthPage('growth-certs')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📜 檢定證照</a>
+                        <a id="subtab-growth-self" onclick="switchGrowthPage('growth-self')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">🧩 自我探索</a>
+                        <a id="subtab-growth-activities" onclick="switchGrowthPage('growth-activities')" style="font-size: 0.85rem; padding: 6px 10px; display: block;">📸 活動紀錄</a>
+                    </div>
+                </div>
             </nav>
         </aside>
 
@@ -380,6 +391,45 @@
                 </iframe>
             </section>
 
+            <!-- ====== 7. 個人成長各別獨立的分頁區塊 ====== -->
+            
+            <!-- (1) 在校成績分頁 -->
+            <section id="page-growth-grades">
+                <h3 style="color: #3182ce; margin-top: 0;">📈 在校成績紀錄</h3>
+                <p style="color: #718096; font-size: 0.95rem; margin-bottom: 20px;">記錄各學期的學業表現與核心學門進步軌跡，作為數位學習歷程的數據基石。</p>
+                <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; background-color: #fafafa;">
+                    <p style="margin: 0; color: #a0aec0; font-size: 0.88rem; font-style: italic;">📊 點選左欄或上傳歷年成績單、班級排名走勢圖後，可於此處更新數據圖表或摘要文字。</p>
+                </div>
+            </section>
+
+            <!-- (2) 檢定證照分頁 -->
+            <section id="page-growth-certs">
+                <h3 style="color: #3182ce; margin-top: 0;">📜 專業檢定與證照清單</h3>
+                <p style="color: #718096; font-size: 0.95rem; margin-bottom: 20px;">條列並收錄在校期間考取之資訊專業證照、語文能力檢定，持續擴充個人硬實力。</p>
+                <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; background-color: #fafafa;">
+                    <p style="margin: 0; color: #a0aec0; font-size: 0.88rem; font-style: italic;">📋 預留清單位置：未來可採用極簡表格或純下載按鈕，將語文檢定、軟體證照、以及專業考試合格證明上傳至此。</p>
+                </div>
+            </section>
+
+            <!-- (3) 自我探索分頁 -->
+            <section id="page-growth-self">
+                <h3 style="color: #3182ce; margin-top: 0;">🧩 自我探索與人格特質</h3>
+                <p style="color: #718096; font-size: 0.95rem; margin-bottom: 20px;">記錄個人核心價值觀、職涯適性測驗反思，以及特質在團隊協作與管理理論中的實踐。</p>
+                <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; background-color: #fafafa; line-height: 1.6;">
+                    <p style="margin: 0 0 10px 0; font-weight: 600; color: #2d3748;">📌 個人特質快照 ─ ESTJ (總管型)</p>
+                    <p style="margin: 0; color: #4a5568; font-size: 0.9rem;">講求高效率、條理分明且重視邏輯與實作能力。在大學的團隊專案中，擅長扮演進度推進者與架構規劃者的角色。這裡未來可以用來存放更深度的學習反思與生涯規畫隨筆。</p>
+                </div>
+            </section>
+
+            <!-- (4) 活動紀錄分頁 -->
+            <section id="page-growth-activities">
+                <h3 style="color: #3182ce; margin-top: 0;">📸 課外活動與工作坊紀錄</h3>
+                <p style="color: #718096; font-size: 0.95rem; margin-bottom: 20px;">留下每一次參與校內外競賽、論壇研討會、或是工作坊的軌跡，用生活點滴拼湊完整的自己。</p>
+                <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; background-color: #fafafa;">
+                    <p style="margin: 0; color: #a0aec0; font-size: 0.88rem; font-style: italic;">🎨 預留排版區：未來可以放上簡報封面、活動大合照（在網頁不突兀的地方縮圖），或是你撰寫的活動成果心得。</p>
+                </div>
+            </section>
+
         </main>
 
         <aside class="sidebar-right">
@@ -492,7 +542,29 @@
                 content.style.display = 'none';
                 arrow.style.transform = 'rotate(0deg)';  // 收合時箭頭恢復
             }
-        }       
+        }
+
+        // 💥 補上：控制左欄「個人成長」子選單的展開與收合
+        function toggleLeftGrowthMenu() {
+            const submenu = document.getElementById('left-growth-list');
+            const arrow = document.getElementById('left-growth-arrow');
+            if (submenu.style.display === 'none') {
+                submenu.style.display = 'block';
+                arrow.style.transform = 'rotate(90deg)'; // 箭頭向下
+            } else {
+                submenu.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';  // 箭頭向右
+            }
+        }
+
+        // 💥 補上：左欄點擊「個人成長」下的子項目時，切換中欄分頁
+        function switchGrowthPage(itemId) {
+            hideAllSections();
+            clearAllActiveTabs();
+            document.getElementById('page-' + itemId).classList.add('active');
+            document.getElementById('subtab-' + itemId).classList.add('active');
+            document.getElementById('tab-growth-root').classList.add('active');
+        }
 
         // 一鍵隱藏中欄所有內容
         function hideAllSections() {
