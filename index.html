@@ -402,13 +402,40 @@
                 </div>
             </section>
 
-            <!-- (2) 檢定證照分頁 -->
+            <!-- (2) 檢定證照分頁（Notion 摺疊選單 + 內嵌預覽版） -->
             <section id="page-growth-certs">
                 <h3 style="color: #3182ce; margin-top: 0;">📜 專業檢定與證照清單</h3>
-                <p style="color: #718096; font-size: 0.95rem; margin-bottom: 20px;">條列並收錄在校期間考取之資訊專業證照、語文能力檢定，持續擴充個人硬實力。</p>
-                <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; background-color: #fafafa;">
-                    <p style="margin: 0; color: #a0aec0; font-size: 0.88rem; font-style: italic;">📋 預留清單位置：未來可採用極簡表格或純下載按鈕，將語文檢定、軟體證照、以及專業考試合格證明上傳至此。</p>
+                <p style="color: #718096; font-size: 0.95rem; margin-bottom: 20px;">
+                    收錄大一期間考取之資訊與管理核心專業證照。點擊證照項目即可直接展開預覽或下載：
+                </p>
+                
+                <!-- 證照 1：人工智慧應用與技術 -->
+                <div class="accordion-item" id="cert-ai" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 12px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('cert-ai')" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; font-size: 0.95rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                        <span style="display: flex; align-items: center; gap: 8px;">🥇 (TQC)人工智慧應用與技術-1150614.pdf</span>
+                        <span class="arrow" style="font-size: 0.75rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 14px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <!-- 內嵌 PDF 預覽視窗，高度設定在舒適的 450px，完全不撐爆中欄 -->
+                        <iframe src="(TQC)人工智慧應用與技術-1150614.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            您的瀏覽器不支援直接瀏覽 PDF，請 <a href="(TQC)人工智慧應用與技術-1150614.pdf" target="_blank">點此開新分頁下載</a>。
+                        </iframe>
+                    </div>
                 </div>
+
+                <!-- 證照 2：專案管理概論 -->
+                <div class="accordion-item" id="cert-pm" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 12px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('cert-pm')" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; font-size: 0.95rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                        <span style="display: flex; align-items: center; gap: 8px;">💼 (TQC)專案管理概論-1141221.pdf</span>
+                        <span class="arrow" style="font-size: 0.75rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 14px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="(TQC)專案管理概論-1141221.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            您的瀏覽器不支援直接瀏覽 PDF，請 <a href="(TQC)專案管理概論-1141221.pdf" target="_blank">點此開新分頁下載</a>。
+                        </iframe>
+                    </div>
+                </div>
+
             </section>
 
             <!-- (3) 自我探索分頁 -->
