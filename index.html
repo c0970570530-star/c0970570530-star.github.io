@@ -197,7 +197,7 @@
                         <a id="subtab-accounting" onclick="switchCoursePage('accounting')" style="font-size: 0.85rem; padding: 6px 10px;">🧾 會計學</a>
                         <a id="subtab-economics" onclick="switchCoursePage('economics')" style="font-size: 0.85rem; padding: 6px 10px;">📈 經濟學</a>
                         <a id="subtab-finance" onclick="switchCoursePage('finance')" style="font-size: 0.85rem; padding: 6px 10px;">💰 財務管理</a>
-                        <a id="subtab-finance" onclick="switchCoursePage('finance')" style="font-size: 0.85rem; padding: 6px 10px;">🔤 大學英文</a>
+                        <a id="subtab-finance" onclick="switchCoursePage('English')" style="font-size: 0.85rem; padding: 6px 10px;">🔤 大學英文</a>
                     </div>
                 </div>
 
@@ -661,27 +661,29 @@
 
         // ================= 3. 各大子選單分頁切換控制 =================
 
-        // 💡 修正後：讓「學習筆記」子科目完美對應到 page-note-xxx 的 ID 結構！
+        // 💡 修正後：讓所有科目子選單精準對照到中欄獨立的 section ID
         function switchCoursePage(courseId) {
             hideAllSections();
             clearAllActiveTabs();
             
-            // 轉換對照：當傳入 'calculus' 時，去開 'page-note-calc'
-            let targetPageId = 'page-note-' + courseId;
+            let targetPageId = '';
             let targetTabId = 'subtab-' + courseId;
 
+            // 依據傳入的科目 ID，精準開啟對應的中欄 section
             if (courseId === 'calculus') {
-                targetPageId = 'page-note-calc';
+                targetPageId = 'page-note-calc';      // 微積分
             } else if (courseId === 'cs') {
-                targetPageId = 'page-note-cs';
+                targetPageId = 'page-note-cs';        // 計算機概論
             } else if (courseId === 'management') {
-                targetPageId = 'page-note-mgmt';
-            } else if (courseId === 'accounting' || courseId === 'economics') {
-                targetPageId = 'page-note-econ'; // 經濟學與會計學共用一個頁面
+                targetPageId = 'page-note-mgmt';      // 管理與財管
+            } else if (courseId === 'accounting') {
+                targetPageId = 'page-note-econ';      // 會計學 (共用經濟/會計頁面)
+            } else if (courseId === 'economics') {
+                targetPageId = 'page-note-econ';      // 經濟學 (共用經濟/會計頁面)
             } else if (courseId === 'finance') {
-                // 檢查你的 HTML，因為財務管理與大學英文呼叫的都是 'finance'
-                // 我們這裡統一做好安全指向
-                targetPageId = 'page-note-eng'; 
+                targetPageId = 'page-note-mgmt';      // 財務管理 (放回管理與財管頁面)
+            } else if (courseId === 'english') {
+                targetPageId = 'page-note-eng';       // 大學英文 (獨立英文頁面)
             }
 
             const pageEl = document.getElementById(targetPageId);
@@ -690,7 +692,7 @@
             if (pageEl) pageEl.classList.add('active');
             if (tabEl) tabEl.classList.add('active');
             
-            // 同時高亮父級分類的「🐍 學習筆記」
+            // 保持父級目錄高亮
             const rootTab = document.getElementById('tab-notes-root');
             if (rootTab) rootTab.classList.add('active');
         }
