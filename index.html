@@ -197,6 +197,7 @@
                         <a id="subtab-accounting" onclick="switchCoursePage('accounting')" style="font-size: 0.85rem; padding: 6px 10px;">🧾 會計學</a>
                         <a id="subtab-economics" onclick="switchCoursePage('economics')" style="font-size: 0.85rem; padding: 6px 10px;">📈 經濟學</a>
                         <a id="subtab-finance" onclick="switchCoursePage('finance')" style="font-size: 0.85rem; padding: 6px 10px;">💰 財務管理</a>
+                        <a id="subtab-finance" onclick="switchCoursePage('finance')" style="font-size: 0.85rem; padding: 6px 10px;">💰 財務管理</a>
                     </div>
                 </div>
 
@@ -307,40 +308,184 @@
                 <div class="accordion-item" id="alb-mini-19" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;"><div class="accordion-header" onclick="toggleAccordion('alb-mini-19')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 500; cursor: pointer; background-color: #fafafa;"><span>💿 《消費期限 (Shohikigen)》 <span style="font-size: 0.8rem; color: #a0aec0; margin-left: 6px;">(2024.11.27)</span></span><span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span></div><div class="accordion-content" style="padding: 14px 16px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color); font-size: 0.85rem; max-height: 200px; overflow-y: auto;"><ul style="list-style: none; padding-left: 4px; margin: 0; line-height: 1.8; color: var(--text-muted);"><li>🎵 1.消費期限 / Shohikigen</li><li>🎵 2.Circles</li><li>🎵 3.MAESTRO</li></ul></div></div>
             </section>
 
-            <section id="page-calculus">
-                <h3 style="color: #3182ce; margin-top: 0;">📐 微積分 (Calculus)</h3>
-                <p><strong>單元一：極限與連續性</strong></p>
-                <p>記錄關於函數極限的核心觀念，以及導數的基礎定義與公式整理...</p>
-            </section>
+            <!-- ====== 2. 學習筆記分頁（科目分類 + PDF 摺疊內嵌預覽版） ====== -->
+            <section id="page-notes">
+                <h3 style="color: #3182ce; margin-top: 0;">📚 大一與大二 ─ 核心學科筆記</h3>
+                <p style="color: #718096; font-size: 0.95rem; margin-bottom: 20px;">
+                    收錄大學期間各核心學門的重點整理、課堂練習與期中期末考範圍。點擊下方科目展開筆記：
+                </p>
 
-            <section id="page-cs">
-                <h3 style="color: #3182ce; margin-top: 0;">💻 計算機概論 (Introduction to CS)</h3>
-                <p><strong>單元一：二進位與邏輯閘</strong></p>
-                <p>資料處理的核心！記錄計算機架構、二進位轉換，以及基本 Python 程式邏輯的起步心路歷程。</p>
-            </section>
+                <!-- ================= 科目 1：📐 微積分 ================= -->
+                <div class="course-group-title" style="font-size: 1rem; font-weight: 700; color: #2d3748; margin-top: 20px; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px solid #edf2f7;">📐 微積分 (Calculus)</div>
+                
+                <div class="accordion-item" id="note-calc-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-calc-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 微積分重點整理.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="微積分重點整理.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="微積分重點整理.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
 
-            <section id="page-management">
-                <h3 style="color: #3182ce; margin-top: 0;">📊 管理學 (Management)</h3>
-                <p><strong>單元一：管理四大功能</strong></p>
-                <p>規劃 (Planning)、組織 (Organizing)、領導 (Leading)、控制 (Controlling)。這裡用來整理各種精彩的商業案例與組織行為學分析。</p>
-            </section>
+                <div class="accordion-item" id="note-calc-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-calc-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 微積分課堂練習.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="微積分課堂練習.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="微積分課堂練習.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
 
-            <section id="page-accounting">
-                <h3 style="color: #3182ce; margin-top: 0;">🧾 會計學 (Accounting)</h3>
-                <p><strong>單元一：會計恆等式</strong></p>
-                <p>資產 = 負債 + 權益。用來歸納借貸法則、日記簿、分類帳以及資產負債表的期末調整筆記。</p>
-            </section>
+                <div class="accordion-item" id="note-calc-3" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-calc-3')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 微積分ch4習題.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="微積分ch4習題.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="微積分ch4習題.pdf" target="_blank">點此下載檔案</a>.
+                        </iframe>
+                    </div>
+                </div>
 
-            <section id="page-economics">
-                <h3 style="color: #3182ce; margin-top: 0;">📈 經濟學 (Economics)</h3>
-                <p><strong>單元一：供給與需求</strong></p>
-                <p>探討市場機制、消費者行為、供需均衡，以及總體經濟學中 GDP 與通膨的運作筆記。</p>
-            </section>
+                <!-- ================= 科目 2：💻 計算機概論 ================= -->
+                <div class="course-group-title" style="font-size: 1rem; font-weight: 700; color: #2d3748; margin-top: 20px; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px solid #edf2f7;">💻 計算機概論 (Intro to CS)</div>
+                
+                <div class="accordion-item" id="note-cs-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-cs-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 計概期中範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="計概期中範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="計概期中範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
 
-            <section id="page-finance">
-                <h3 style="color: #3182ce; margin-top: 0;">💰 財務管理 (Financial Management)</h3>
-                <p><strong>單元一：貨幣的時間價值</strong></p>
-                <p>分析現值 (PV)、終值 (FV)、年金計算，以及公司資產評估與投資決策的精準分析。</p>
+                <div class="accordion-item" id="note-cs-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-cs-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 計概期末範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="計概期末範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="計概期末範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- ================= 科目 3：👔 專業管理學位 ================= -->
+                <div class="course-group-title" style="font-size: 1rem; font-weight: 700; color: #2d3748; margin-top: 20px; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px solid #edf2f7;">👔 管理學與財務管理 (Management & Finance)</div>
+                
+                <div class="accordion-item" id="note-mgmt-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-mgmt-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 管理學期中範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="管理學期中範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="管理學期中範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="note-mgmt-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-mgmt-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 管理學期末範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="管理學期末範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="管理學期末範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="note-fin-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-fin-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 財務管理期中範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="財務管理期中範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="財務管理期中範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="note-fin-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-fin-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 財務管理期末範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="財務管理期末範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="財務管理期末範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- ================= 科目 4：📊 經濟與會計 ================= -->
+                <div class="course-group-title" style="font-size: 1rem; font-weight: 700; color: #2d3748; margin-top: 20px; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px solid #edf2f7;">📊 經濟學與會計學 (Economics & Accounting)</div>
+                
+                <div class="accordion-item" id="note-econ-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-econ-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 經濟學期中範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="經濟學期中範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="經濟學期中範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="note-acct-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-acct-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 會計學期末範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="會計學期末範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="會計學期末範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- ================= 科目 5：🔤 大學英文 ================= -->
+                <div class="course-group-title" style="font-size: 1rem; font-weight: 700; color: #2d3748; margin-top: 20px; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px solid #edf2f7;">🔤 大學英文 (English)</div>
+                
+                <div class="accordion-item" id="note-eng-1" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-eng-1')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 一上英文期末範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="一上英文期末範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="一上英文期末範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="accordion-item" id="note-eng-2" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('note-eng-2')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; font-size: 0.9rem; cursor: pointer; background-color: #fafafa;">
+                        <span>📝 一下英文期末範圍.pdf</span>
+                        <span class="arrow" style="font-size: 0.7rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 12px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <iframe src="一下英文期末範圍.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            瀏覽器不支援直接瀏覽，請 <a href="一下英文期末範圍.pdf" target="_blank">點此下載檔案</a>。
+                        </iframe>
+                    </div>
+                </div>
+
             </section>
 
             <section id="page-course-rec">
