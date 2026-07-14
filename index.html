@@ -738,70 +738,7 @@
             document.getElementById('tab-growth-root').classList.add('active');
         }
 
-        // 1. 控制顯示與隱藏的核心切換函數（與證照寫法完全一致）
-        function showSection(id) {
-            hideAllSections();
-            clearAllActiveTabs();
-            
-            // 判斷現在要開啟哪一個分頁，並讓對應的左欄按鈕與中欄內容 active
-            if (id === 'page-home') {
-                document.getElementById('page-home').classList.add('active');
-                document.getElementById('tab-home').classList.add('active');
-            } else if (id === 'page-projects') {
-                document.getElementById('page-projects').classList.add('active');
-                document.getElementById('tab-projects').classList.add('active');
-            } else if (id === 'page-growth-certs') {
-                document.getElementById('page-growth-certs').classList.add('active');
-                document.getElementById('tab-growth-certs').classList.add('active');
-            } 
-            // 💥 新增：5 個科目分頁的顯示與高亮邏輯
-            else if (id === 'page-note-calc') {
-                document.getElementById('page-note-calc').classList.add('active');
-                document.getElementById('tab-note-calc').classList.add('active');
-            } else if (id === 'page-note-cs') {
-                document.getElementById('page-note-cs').classList.add('active');
-                document.getElementById('tab-note-cs').classList.add('active');
-            } else if (id === 'page-note-mgmt') {
-                document.getElementById('page-note-mgmt').classList.add('active');
-                document.getElementById('tab-note-mgmt').classList.add('active');
-            } else if (id === 'page-note-econ') {
-                document.getElementById('page-note-econ').classList.add('active');
-                document.getElementById('tab-note-econ').classList.add('active');
-            } else if (id === 'page-note-eng') {
-                document.getElementById('page-note-eng').classList.add('active');
-                document.getElementById('tab-note-eng').classList.add('active');
-            }
-        }
-
-        // 2. 隱藏所有分頁（包含新科目）
-        function hideAllSections() {
-            // 原本的大分頁隱藏
-            if(document.getElementById('page-home'))         document.getElementById('page-home').classList.remove('active');
-            if(document.getElementById('page-projects'))     document.getElementById('page-projects').classList.remove('active');
-            if(document.getElementById('page-growth-certs')) document.getElementById('page-growth-certs').classList.remove('active');
-
-            // 💥 新增：隱藏 5 個科目分頁
-            if(document.getElementById('page-note-calc'))    document.getElementById('page-note-calc').classList.remove('active');
-            if(document.getElementById('page-note-cs'))      document.getElementById('page-note-cs').classList.remove('active');
-            if(document.getElementById('page-note-mgmt'))    document.getElementById('page-note-mgmt').classList.remove('active');
-            if(document.getElementById('page-note-econ'))    document.getElementById('page-note-econ').classList.remove('active');
-            if(document.getElementById('page-note-eng'))     document.getElementById('page-note-eng').classList.remove('active');
-        }
-
-        // 3. 清除所有左欄標籤的高亮狀態（包含新科目）
-        function clearAllActiveTabs() {
-            // 原本的大分頁標籤清除
-            if(document.getElementById('tab-home'))         document.getElementById('tab-home').classList.remove('active');
-            if(document.getElementById('tab-projects'))     document.getElementById('tab-projects').classList.remove('active');
-            if(document.getElementById('tab-growth-certs')) document.getElementById('tab-growth-certs').classList.remove('active');
-            
-            // 💥 新增：清除 5 個科目左欄按鈕的高亮
-            if(document.getElementById('tab-note-calc'))    document.getElementById('tab-note-calc').classList.remove('active');
-            if(document.getElementById('tab-note-cs'))      document.getElementById('tab-note-cs').classList.remove('active');
-            if(document.getElementById('tab-note-mgmt'))    document.getElementById('tab-note-mgmt').classList.remove('active');
-            if(document.getElementById('tab-note-econ'))    document.getElementById('tab-note-econ').classList.remove('active');
-            if(document.getElementById('tab-note-eng'))     document.getElementById('tab-note-eng').classList.remove('active');
-        }
+        
 
         // 一鍵隱藏中欄所有內容
         function hideAllSections() {
