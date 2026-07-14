@@ -311,15 +311,18 @@
                 <h3 style="color: #3182ce; margin-top: 0;">📐 微積分 (Calculus)</h3>
                 <p><strong>單元一：極限與連續性</strong></p>
                 <p>記錄關於函數極限的核心觀念，以及導數的基礎定義與公式整理...</p>
-                <iframe src="微積分ch4習題.pdf" width="100%" height="400px" style="border: 1px solid #edf2f7; border-radius: 8px; margin-top: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                    您的瀏覽器不支援直接瀏覽 PDF，請 <a href="微積分ch4習題.pdf" target="_blank">點此開新分頁下載</a>。
-                </iframe>
-                <iframe src="微積分課堂練習.pdf" width="100%" height="400px" style="border: 1px solid #edf2f7; border-radius: 8px; margin-top: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                    您的瀏覽器不支援直接瀏覽 PDF，請 <a href="微積分課堂練習.pdf" target="_blank">點此開新分頁下載</a>。
-                </iframe>
-                <iframe src="微積分重點整理.pdf" width="100%" height="400px" style="border: 1px solid #edf2f7; border-radius: 8px; margin-top: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                    您的瀏覽器不支援直接瀏覽 PDF，請 <a href="微積分重點整理.pdf" target="_blank">點此開新分頁下載</a>。
-                </iframe>
+                <div class="accordion-item" id="cert-ai" style="border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 12px; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion('cert-ai')" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; font-size: 0.95rem; font-weight: 500; cursor: pointer; background-color: #fafafa;">
+                        <span style="display: flex; align-items: center; gap: 8px;">微積分ch4習題.pdf</span>
+                        <span class="arrow" style="font-size: 0.75rem; color: var(--text-light); transition: transform 0.2s;">▶</span>
+                    </div>
+                    <div class="accordion-content" style="padding: 14px; display: none; background-color: #ffffff; border-top: 1px dashed var(--border-color);">
+                        <!-- 內嵌 PDF 預覽視窗，高度設定在舒適的 450px，完全不撐爆中欄 -->
+                        <iframe src="微積分ch4習題.pdf" width="100%" height="450px" style="border: 1px solid #edf2f7; border-radius: 6px;">
+                            您的瀏覽器不支援直接瀏覽 PDF，請 <a href="微積分ch4習題.pdf" target="_blank">點此開新分頁下載</a>。
+                        </iframe>
+                    </div>
+                </div>
             </section>
 
             <section id="page-cs">
