@@ -602,7 +602,7 @@
     </div>
 
     <script>
-        // 大分類切換（生活小事、追星紀錄）
+        // ================= 1. 大分類切換（生活小事） =================
         function switchTab(tabId) {
             hideAllSections();
             clearAllActiveTabs();
@@ -610,7 +610,7 @@
             document.getElementById('tab-' + tabId).classList.add('active');
         }
 
-        // 控制左欄「學習筆記」子選單展開收合
+        // ================= 2. 控制左欄各大分類子選單展開收合 =================
         function toggleLeftNotesMenu() {
             const submenu = document.getElementById('left-submenu-list');
             const arrow = document.getElementById('left-menu-arrow');
@@ -623,7 +623,6 @@
             }
         }
 
-        // 控制左欄「備審資料」子選單展開收合
         function toggleLeftPortfolioMenu() {
             const submenu = document.getElementById('left-portfolio-list');
             const arrow = document.getElementById('left-portfolio-arrow');
@@ -636,25 +635,6 @@
             }
         }
 
-        // 左欄點擊「學習筆記」子科目
-        function switchCoursePage(courseId) {
-            hideAllSections();
-            clearAllActiveTabs();
-            document.getElementById('page-' + courseId).classList.add('active');
-            document.getElementById('subtab-' + courseId).classList.add('active');
-            document.getElementById('tab-notes-root').classList.add('active');
-        }
-
-        // 左欄點擊「備審資料」子項目
-        function switchPortfolioPage(itemId) {
-            hideAllSections();
-            clearAllActiveTabs();
-            document.getElementById('page-' + itemId).classList.add('active');
-            document.getElementById('subtab-' + itemId).classList.add('active');
-            document.getElementById('tab-portfolio-root').classList.add('active');
-        }
-
-        // 💥 控制左欄「追星紀錄」子選單展開收合
         function toggleLeftStarMenu() {
             const submenu = document.getElementById('left-star-list');
             const arrow = document.getElementById('left-star-arrow');
@@ -667,106 +647,118 @@
             }
         }
 
-        // 💥 點擊左欄「追星紀錄」下的大分類時，連動換中欄
-        function switchStarPage(itemId) {
-            hideAllSections();
-            clearAllActiveTabs();
-            document.getElementById('page-' + itemId).classList.add('active');
-            document.getElementById('subtab-' + itemId).classList.add('active');
-            document.getElementById('tab-star-root').classList.add('active');
-        }
-
-        // 💥 補上：控制中欄「專輯項目」展開與收合的控制邏輯
-        function toggleAccordion(albumId) {
-            const albumBox = document.getElementById(albumId);
-            const content = albumBox.querySelector('.accordion-content');
-            const arrow = albumBox.querySelector('.arrow');
-            
-            if (content.style.display === 'none' || content.style.display === '') {
-                content.style.display = 'block';
-                arrow.style.transform = 'rotate(90deg)'; // 展開時箭頭向下
-            } else {
-                content.style.display = 'none';
-                arrow.style.transform = 'rotate(0deg)';  // 收合時箭頭恢復
-            }
-        }
-
-        // 💥 補上：控制左欄「個人成長」子選單的展開與收合
         function toggleLeftGrowthMenu() {
             const submenu = document.getElementById('left-growth-list');
             const arrow = document.getElementById('left-growth-arrow');
             if (submenu.style.display === 'none') {
                 submenu.style.display = 'block';
-                arrow.style.transform = 'rotate(90deg)'; // 箭頭向下
+                arrow.style.transform = 'rotate(90deg)';
             } else {
                 submenu.style.display = 'none';
-                arrow.style.transform = 'rotate(0deg)';  // 箭頭向右
+                arrow.style.transform = 'rotate(0deg)';
             }
         }
 
-        // 💥 補上：左欄點擊「個人成長」下的子項目時，切換中欄分頁
+        // ================= 3. 各大子選單分頁切換控制 =================
+
+        // 💡 修正後：讓「學習筆記」子科目完美對應到 page-note-xxx 的 ID 結構！
+        function switchCoursePage(courseId) {
+            hideAllSections();
+            clearAllActiveTabs();
+            
+            // 轉換對照：當傳入 'calculus' 時，去開 'page-note-calc'
+            let targetPageId = 'page-note-' + courseId;
+            let targetTabId = 'subtab-' + courseId;
+
+            if (courseId === 'calculus') {
+                targetPageId = 'page-note-calc';
+            } else if (courseId === 'cs') {
+                targetPageId = 'page-note-cs';
+            } else if (courseId === 'management') {
+                targetPageId = 'page-note-mgmt';
+            } else if (courseId === 'accounting' || courseId === 'economics') {
+                targetPageId = 'page-note-econ'; // 經濟學與會計學共用一個頁面
+            } else if (courseId === 'finance') {
+                // 檢查你的 HTML，因為財務管理與大學英文呼叫的都是 'finance'
+                // 我們這裡統一做好安全指向
+                targetPageId = 'page-note-eng'; 
+            }
+
+            const pageEl = document.getElementById(targetPageId);
+            const tabEl = document.getElementById(targetTabId);
+
+            if (pageEl) pageEl.classList.add('active');
+            if (tabEl) tabEl.classList.add('active');
+            
+            // 同時高亮父級分類的「🐍 學習筆記」
+            const rootTab = document.getElementById('tab-notes-root');
+            if (rootTab) rootTab.classList.add('active');
+        }
+
+        // 備審資料切換
+        function switchPortfolioPage(itemId) {
+            hideAllSections();
+            clearAllActiveTabs();
+            const pageEl = document.getElementById('page-' + itemId);
+            const tabEl = document.getElementById('subtab-' + itemId);
+            if (pageEl) pageEl.classList.add('active');
+            if (tabEl) tabEl.classList.add('active');
+            const rootTab = document.getElementById('tab-portfolio-root');
+            if (rootTab) rootTab.classList.add('active');
+        }
+
+        // 追星紀錄切換
+        function switchStarPage(itemId) {
+            hideAllSections();
+            clearAllActiveTabs();
+            const pageEl = document.getElementById('page-' + itemId);
+            const tabEl = document.getElementById('subtab-' + itemId);
+            if (pageEl) pageEl.classList.add('active');
+            if (tabEl) tabEl.classList.add('active');
+            const rootTab = document.getElementById('tab-star-root');
+            if (rootTab) rootTab.classList.add('active');
+        }
+
+        // 個人成長切換 (證照等)
         function switchGrowthPage(itemId) {
             hideAllSections();
             clearAllActiveTabs();
-            document.getElementById('page-' + itemId).classList.add('active');
-            document.getElementById('subtab-' + itemId).classList.add('active');
-            document.getElementById('tab-growth-root').classList.add('active');
+            const pageEl = document.getElementById('page-' + itemId);
+            const tabEl = document.getElementById('subtab-' + itemId);
+            if (pageEl) pageEl.classList.add('active');
+            if (tabEl) tabEl.classList.add('active');
+            const rootTab = document.getElementById('tab-growth-root');
+            if (rootTab) rootTab.classList.add('active');
         }
 
-        // 💥 1. 與證照邏輯百分之百完全一致的 showSection 函數
+        // ================= 4. 與證照同邏輯的一對一 showSection (供特殊點擊使用) =================
         function showSection(id) {
             hideAllSections();
             clearAllActiveTabs();
             
-            // 判斷開啟大分頁或獨立科目分頁，並給予對應的 active 高亮
-            if (id === 'page-home') {
-                document.getElementById('page-home').classList.add('active');
-                document.getElementById('tab-home').classList.add('active');
-            } else if (id === 'page-projects') {
-                document.getElementById('page-projects').classList.add('active');
-                document.getElementById('tab-projects').classList.add('active');
-            } else if (id === 'page-growth-certs') {
-                document.getElementById('page-growth-certs').classList.add('active');
-                document.getElementById('tab-growth-certs').classList.add('active');
-            } 
-            // 💡 學習筆記 5 個獨立學門分頁切換控制
-            else if (id === 'page-note-calc') {
-                document.getElementById('page-note-calc').classList.add('active');
-                document.getElementById('tab-note-calc').classList.add('active');
-            } else if (id === 'page-note-cs') {
-                document.getElementById('page-note-cs').classList.add('active');
-                document.getElementById('tab-note-cs').classList.add('active');
-            } else if (id === 'page-note-mgmt') {
-                document.getElementById('page-note-mgmt').classList.add('active');
-                document.getElementById('tab-note-mgmt').classList.add('active');
-            } else if (id === 'page-note-econ') {
-                document.getElementById('page-note-econ').classList.add('active');
-                document.getElementById('tab-note-econ').classList.add('active');
-            } else if (id === 'page-note-eng') {
-                document.getElementById('page-note-eng').classList.add('active');
-                document.getElementById('tab-note-eng').classList.add('active');
-            }
+            const pageEl = document.getElementById(id);
+            if (pageEl) pageEl.classList.add('active');
+            
+            // 自動高亮對應 tab
+            let tabId = id.replace('page-', 'tab-');
+            const tabEl = document.getElementById(tabId);
+            if (tabEl) tabEl.classList.add('active');
         }
 
-        // 💥 2. 一鍵清除與隱藏所有中欄頁面
+        // ================= 5. 一鍵重置與隱藏函數（解開同名衝突，合併所有分頁） =================
         function hideAllSections() {
-            const pages = ['page-home', 'page-projects', 'page-growth-certs', 'page-note-calc', 'page-note-cs', 'page-note-mgmt', 'page-note-econ', 'page-note-eng'];
-            pages.forEach(pageId => {
-                const el = document.getElementById(pageId);
-                if (el) el.classList.remove('active');
-            });
+            // 自動抓取中欄所有 section 進行隱藏
+            const sections = document.querySelectorAll('.content-center section');
+            sections.forEach(sec => sec.classList.remove('active'));
         }
 
-        // 💥 3. 一鍵清除所有左欄按鈕的高亮狀態
         function clearAllActiveTabs() {
-            const tabs = ['tab-home', 'tab-projects', 'tab-growth-certs', 'tab-note-calc', 'tab-note-cs', 'tab-note-mgmt', 'tab-note-econ', 'tab-note-eng'];
-            tabs.forEach(tabId => {
-                const el = document.getElementById(tabId);
-                if (el) el.classList.remove('active');
-            });
+            // 自動抓取左欄所有 a 標籤清除高亮
+            const activeTabs = document.querySelectorAll('.sidebar-left a');
+            activeTabs.forEach(tab => tab.classList.remove('active'));
         }
 
-        // 💥 4. 萬用 Notion 摺疊手風琴收放預覽函數（箭頭旋轉 + PDF 展開）
+        // ================= 6. 萬用 Notion 摺疊手風琴控制函數 =================
         function toggleAccordion(itemId) {
             const item = document.getElementById(itemId);
             if (!item) return;
@@ -783,19 +775,7 @@
             }
         }
 
-        // 一鍵隱藏中欄所有內容
-        function hideAllSections() {
-            const sections = document.querySelectorAll('.content-center section');
-            sections.forEach(sec => sec.classList.remove('active'));
-        }
-
-        // 一鍵清除左欄所有高亮
-        function clearAllActiveTabs() {
-            const activeTabs = document.querySelectorAll('.sidebar-left a');
-            activeTabs.forEach(tab => tab.classList.remove('active'));
-        }
-
-        // 時鐘動態運作
+        // ================= 7. 時鐘動態運作 =================
         function updateClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
