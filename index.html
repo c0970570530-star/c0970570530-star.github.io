@@ -197,7 +197,7 @@
                         <a id="subtab-accounting" onclick="switchCoursePage('accounting')" style="font-size: 0.85rem; padding: 6px 10px;">🧾 會計學</a>
                         <a id="subtab-economics" onclick="switchCoursePage('economics')" style="font-size: 0.85rem; padding: 6px 10px;">📈 經濟學</a>
                         <a id="subtab-finance" onclick="switchCoursePage('finance')" style="font-size: 0.85rem; padding: 6px 10px;">💰 財務管理</a>
-                        <a id="subtab-finance" onclick="switchCoursePage('finance')" style="font-size: 0.85rem; padding: 6px 10px;">💰 財務管理</a>
+                        <a id="subtab-finance" onclick="switchCoursePage('finance')" style="font-size: 0.85rem; padding: 6px 10px;">🔤 大學英文</a>
                     </div>
                 </div>
 
@@ -736,6 +736,32 @@
             document.getElementById('page-' + itemId).classList.add('active');
             document.getElementById('subtab-' + itemId).classList.add('active');
             document.getElementById('tab-growth-root').classList.add('active');
+        }
+
+        function hideAllSections() {
+            // 1. 原本的大分頁隱藏（請保留你原本寫在這裡的其他分頁，例如首頁、專案等）
+            document.getElementById('page-home').classList.remove('active');
+            document.getElementById('page-projects').classList.remove('active');
+            document.getElementById('page-growth-certs').classList.remove('active'); // 證照
+
+            // 2. 💥 補上這 5 行：讓所有科目分頁在切換時也能被正確隱藏
+            if(document.getElementById('page-note-calc')) document.getElementById('page-note-calc').classList.remove('active');
+            if(document.getElementById('page-note-cs'))   document.getElementById('page-note-cs').classList.remove('active');
+            if(document.getElementById('page-note-mgmt')) document.getElementById('page-note-mgmt').classList.remove('active');
+            if(document.getElementById('page-note-econ')) document.getElementById('page-note-econ').classList.remove('active');
+            if(document.getElementById('page-note-eng'))  document.getElementById('page-note-eng').classList.remove('active');
+        }
+
+        function clearAllActiveTabs() {
+            // 原本的大分頁標籤清除（保留你原本的項目，例如：）
+            document.getElementById('tab-home').classList.remove('active');
+            
+            // 💥 補上這 5 行：清除所有科目左欄按鈕的高亮狀態
+            if(document.getElementById('tab-note-calc')) document.getElementById('tab-note-calc').classList.remove('active');
+            if(document.getElementById('tab-note-cs'))   document.getElementById('tab-note-cs').classList.remove('active');
+            if(document.getElementById('tab-note-mgmt')) document.getElementById('tab-note-mgmt').classList.remove('active');
+            if(document.getElementById('tab-note-econ')) document.getElementById('tab-note-econ').classList.remove('active');
+            if(document.getElementById('tab-note-eng'))  document.getElementById('tab-note-eng').classList.remove('active');
         }
 
         // 一鍵隱藏中欄所有內容
